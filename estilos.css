@@ -1,5 +1,185 @@
+:root {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    --color-oscuro: #292A3A;
+}
+
 .navbar-nav.navbar-center {
     position: relative;
     left: 50%;
     transform: translatex(-50%);
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--color-oscuro);
+    color: white;
+}
+
+nav {
+    font-size: 1.4rem;
+}
+
+/*Texto inicial*/
+
+ .Bienvenidos {
+     text-align: center;
+    color: white;
+    height: 100%;
+}
+
+.Bienvenidos h1 {
+   padding-bottom: 3%;
+}
+
+/*Basica*/
+
+.cuotas .container {
+    width: 100%;
+    height: 80%;
+}
+.row {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+}
+
+.cuotas .col-xs-12 {
+    color: white;
+    /* width: 60%;
+    height: 60%; */
+    /* padding: 3%; */
+    padding-bottom: 5%;
+} 
+
+.cuotas .col-sm-12 {
+    padding-bottom: 5%;
+
+} 
+
+.cuotas .col-md-6 {
+    padding: 4%;
+
+}
+
+/*Basica*/
+.titulo-precioB {
+    background-color: blueviolet;
+}
+
+.titulo-precioB p {
+    color: yellow;
+  
+}
+
+/*Avanzada*/
+
+.titulo-precioA {
+    background-color: black;
+}
+
+.titulo-precioA p {
+    color: red;
+}
+
+/*Ultra*/
+.titulo-precioU {
+    background-color: #06DDE8;
+}
+
+.titulo-precioU h1 {
+    color: white;
+}
+
+.incluye {
+    text-align: center;
+    color: grey;
+}
+
+.incluye ul {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; 
+     height: 100%; 
+    width: 100%;
+ } 
+
+.incluye li {
+    border: 1px solid black;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; 
+}
+
+
+.incluye li:nth-child(odd) {
+    background-color: #c7c2c2;
+    
+}
+
+.incluye li:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/*Quienes Somos*/
+
+.mapa {
+    height: 50%;
+    width: 80%;
+}
+
+#tagDivPanorama {
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    border: red solid 5px;
+}
+
+/*Contacto*/
+
+.contacto {
+    /* text-align: center; */
+    background: var(--color-oscuro);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    /* width: 20%; */
+}
+
+
+main {
+    grid-area: main;
+    background: url("/GymArtBoostrap/imagenes/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--color-oscuro);
+    color: white;
 }
