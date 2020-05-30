@@ -213,23 +213,53 @@ function modificarClientes()
             $actividadFisica = $_POST["actividad"];
             $lesiones = $_POST["lesiones"];
 
-            //Vamos a realizar una consulta UPDATE para actuliazar los datos de los clientes
-            $actualizarCliente =
-                "UPDATE clientes " .
-                "SET Nombre = '$nombre', Apellidos='$apellidos', Domicilio='$domicilio',Poblacion='$poblacion', CorreoElectronico='$correoElectronico', " .
-                " Telefono=$telefono, Observaciones= '$Observaciones', Peso=$peso, Altura = $altura, Edad=$edad, ActividadFisica='$actividadFisica', " .
-                " Lesiones='$lesiones' " .
-                "WHERE CodigoCliente=$id";
-            echo $actualizarCliente;
-            //exit;
-            $resultado = $conexion->query($actualizarCliente);
-
-            if ($resultado) {
-                header("Location:verClientes.php");
-                echo "<p>Se ha modificado $conexion->affected_rows registros con exito</p>";
-            } else {
-                echo "Tuvimos problemas en la modificacion, intentelo de nuevo mas tarde";
+            if (!validad_email($correoElectronico)) {
+                $errores[] = "<script>  Swal.fire({
+                    icon: 'error',
+                    title: 'Correo',
+                    text: 'Tiene que ser un correo valido',
+                    type: 'error',
+                  });</script>";
             }
+
+            if ($errores) {
+                mostrar_errores($errores);
+                unset($errores);
+            } else {
+                $actualizarCliente =
+                    "UPDATE clientes " .
+                    "SET Nombre = '$nombre', Apellidos='$apellidos', Domicilio='$domicilio',Poblacion='$poblacion', CorreoElectronico='$correoElectronico', " .
+                    " Telefono=$telefono, Observaciones= '$Observaciones', Peso=$peso, Altura = $altura, Edad=$edad, ActividadFisica='$actividadFisica', " .
+                    " Lesiones='$lesiones' " .
+                    "WHERE CodigoCliente=$id";
+                echo $actualizarCliente;
+                //exit;
+                $resultado = $conexion->query($actualizarCliente);
+
+                if ($resultado) {
+                    echo " <script>
+                Swal.fire({
+                    title: 'Cliente',
+                    text: 'Se ha cambiado la informacion exitosamente',
+                    icon: 'success',
+                }).then((result) => {
+                    if (result) {
+                        window.location.href = '/GymArtBoostrap/clientes/verClientes.php';
+                    }
+                });
+            </script> ";
+                    // header("Location:verClientes.php");
+                    // echo "<p>Se ha modificado $conexion->affected_rows registros con exito</p>";
+                } else {
+                    echo "<script> Swal.fire({
+                        title: '¡Error!',
+                        text: 'Tuvimos problemas, intentelo mas tarde',
+                        type: 'error',
+                      });</script>";
+                }
+            }
+            //Vamos a realizar una consulta UPDATE para actuliazar los datos de los clientes
+
         }
     }
 
@@ -258,32 +288,32 @@ function visualizarDatosCliente()
                             <h1 class="">Datos Personales</h1>
                             <div class="form-group">
                                 <label for="ModificarNombre">Nombre:</label>
-                                <input type="text" value="<?php echo "${fila['Nombre']}" ?>" class="form-control" id="ModificarNombre" name="nombre">
+                                <input type="text" value="<?php echo "${fila['Nombre']}" ?>" class="form-control" id="ModificarNombre" name="nombre" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarApellidos">Apellidos:</label>
-                                <input type="text" value="<?php echo "${fila['Apellidos']}" ?>" class="form-control" id="modificarApellidos" name="apellidos">
+                                <input type="text" value="<?php echo "${fila['Apellidos']}" ?>" class="form-control" id="modificarApellidos" name="apellidos" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarDomicilio">Domicilio:</label>
-                                <input type="text" value="<?php echo "${fila['Domicilio']}" ?>" class="form-control" id="modificarDomicilio" name="domicilio">
+                                <input type="text" value="<?php echo "${fila['Domicilio']}" ?>" class="form-control" id="modificarDomicilio" name="domicilio" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarPoblacion">Poblacion:</label>
-                                <input type="text" value="<?php echo "${fila['Poblacion']}" ?>" class="form-control" id="modificarPoblacion" name="poblacion">
+                                <input type="text" value="<?php echo "${fila['Poblacion']}" ?>" class="form-control" id="modificarPoblacion" name="poblacion" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarEmail">Email:</label>
-                                <input type="email" value="<?php echo "${fila['CorreoElectronico']}" ?>" class="form-control" id="modificarEmail" name="mail">
+                                <input type="email" value="<?php echo "${fila['CorreoElectronico']}" ?>" class="form-control" id="modificarEmail" name="mail" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarTelefono">Telefono:</label>
-                                <input type="number" value="<?php echo "${fila['Telefono']}" ?>" class="form-control" id="modificarTelefono" name="telefono">
+                                <input type="number" value="<?php echo "${fila['Telefono']}" ?>" class="form-control" id="modificarTelefono" name="telefono" required>
                             </div>
 
 
@@ -293,22 +323,22 @@ function visualizarDatosCliente()
                             <h1>Información adicional</h1>
                             <div class="form-group">
                                 <label for="modificarObservaciones">Observaciones:</label>
-                                <input type="text" value="<?php echo "${fila['Observaciones']}" ?>" class="form-control" id="modificarObservaciones" name="Observaciones">
+                                <input type="text" value="<?php echo "${fila['Observaciones']}" ?>" class="form-control" id="modificarObservaciones" name="Observaciones" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarPeso">Peso:</label>
-                                <input type="number" value="<?php echo "${fila['Peso']}" ?>" class="form-control" id="modificarPeso" name="peso">
+                                <input type="number" value="<?php echo "${fila['Peso']}" ?>" class="form-control" id="modificarPeso" name="peso" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarAltura">Altura:</label>
-                                <input type="number" value="<?php echo "${fila['Altura']}" ?>" class="form-control" id="modificarAltura" name="altura">
+                                <input type="number" value="<?php echo "${fila['Altura']}" ?>" class="form-control" id="modificarAltura" name="altura" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarEdad">Edad:</label>
-                                <input type="number" value="<?php echo "${fila['Edad']}" ?>" class="form-control" id="modificarEdad" name="edad">
+                                <input type="number" value="<?php echo "${fila['Edad']}" ?>" class="form-control" id="modificarEdad" name="edad" required>
                             </div>
 
                             <div class="form-group">
@@ -351,26 +381,49 @@ function anadirClientes()
     $domicilio = $_POST["domicilio"];
     $poblacion = $_POST["poblacion"];
     $correoElectronico = $_POST["mail"];
-    $telefono = $_POST["movil"];
+    $telefono = $_POST["telefono"];
     $Observaciones = $_POST["Observaciones"];
     $peso = $_POST["peso"];
     $altura = $_POST["altura"];
-    $masaMuscular = $_POST["masaMuscular"];
+    // $masaMuscular = $_POST["masaMuscular"];
     $edad = $_POST["edad"];
     $actividadFisica = $_POST["actividad"];
     $lesiones = $_POST["lesiones"];
 
-    $anadir_cliente = "INSERT INTO clientes (CodigoCliente,Nombre,Apellidos,Domicilio,Poblacion,
-            CorreoElectronico,Telefono,Observaciones,Peso,Altura,MasaCorporal,Edad,ActividadFisica,Lesiones,Activo) 
-            VALUES($codigo,'$nombre','$apellidos','$domicilio','$poblacion','$correoElectronico',
-            $telefono,'$Observaciones',$peso,$altura,$masaMuscular,$edad,'$actividadFisica','$lesiones',1)";
-    echo "<p>$anadir_cliente </p>";
-    $resultado = $conexion->query($anadir_cliente);
+    // if (strlen($_POST["telefono"]) <= 9) {
+    //     $errores[] = "<script> Swal.fire({
+    //         icon: 'error',
+    //         title: 'Telefono',
+    //         text: 'Numero de telefono incorrecto',
+    //         type: 'error',
+    //       });</script>";
+    // }
 
-    if ($resultado) {
-        header("Location:verClientes.php");
-        echo "<p>Se ha añadido $conexion->affected_rows registros con exito</p>";
+    if (!validad_email($correoElectronico)) {
+        $errores[] = "<script>  Swal.fire({
+            icon: 'error',
+            title: 'Correo',
+            text: 'Tiene que ser un correo valido',
+            type: 'error',
+          });</script>";
+    }
+
+    if ($errores) {
+        mostrar_errores($errores);
+        unset($errores);
     } else {
-        echo "Tuvimos problemas en la insercion, intentelo de nuevo mas tarde";
+        $anadir_cliente = "INSERT INTO clientes (CodigoCliente,Nombre,Apellidos,Domicilio,Poblacion,
+        CorreoElectronico,Telefono,Observaciones,Peso,Altura,Edad,ActividadFisica,Lesiones,Activo) 
+        VALUES($codigo,'$nombre','$apellidos','$domicilio','$poblacion','$correoElectronico',
+        $telefono,'$Observaciones',$peso,$altura,$edad,'$actividadFisica','$lesiones',1)";
+        echo "<p>$anadir_cliente </p>";
+        $resultado = $conexion->query($anadir_cliente);
+
+        if ($resultado) {
+            header("Location:verClientes.php");
+            echo "<p>Se ha añadido $conexion->affected_rows registros con exito</p>";
+        } else {
+            echo "Tuvimos problemas en la insercion, intentelo de nuevo mas tarde";
+        }
     }
 }

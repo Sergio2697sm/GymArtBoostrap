@@ -63,7 +63,7 @@ include '../BBDD/clientesBBDD.php';
 
                                     <div class="form-group">
                                         <label for="modificarTelefono">Telefono:</label>
-                                        <input type="text" class="form-control" id="modificarTelefono" name="mail">
+                                        <input type="number" class="form-control" id="modificarTelefono" name="telefono">
                                     </div>
 
 
@@ -88,7 +88,7 @@ include '../BBDD/clientesBBDD.php';
 
                                     <div class="form-group">
                                         <label for="modificarEdad">Edad:</label>
-                                        <input type="text" class="form-control" id="modificarEdad" name="Edad">
+                                        <input type="text" class="form-control" id="modificarEdad" name="edad">
                                     </div>
 
                                     <div class="form-group">
