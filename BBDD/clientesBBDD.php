@@ -205,22 +205,22 @@ function modificarClientes()
             $domicilio = $_POST["domicilio"];
             $poblacion = $_POST["poblacion"];
             $correoElectronico = $_POST["mail"];
-            $telefono = $_POST["movil"];
+            $telefono = $_POST["telefono"];
             $Observaciones = $_POST["Observaciones"];
             $peso = $_POST["peso"];
             $altura = $_POST["altura"];
             $edad = $_POST["edad"];
-            $actividadFisica = $_POST["ActividadFisica"];
-            $lesiones = $_POST["Lesiones"];
+            $actividadFisica = $_POST["actividad"];
+            $lesiones = $_POST["lesiones"];
 
             //Vamos a realizar una consulta UPDATE para actuliazar los datos de los clientes
             $actualizarCliente =
                 "UPDATE clientes " .
                 "SET Nombre = '$nombre', Apellidos='$apellidos', Domicilio='$domicilio',Poblacion='$poblacion', CorreoElectronico='$correoElectronico', " .
-                " Telefono=$telefono, Observaciones= '$Observaciones', Peso=$peso, altura =$altura, edad=$edad, ActividadFisica='$actividadFisica', " .
+                " Telefono=$telefono, Observaciones= '$Observaciones', Peso=$peso, Altura = $altura, Edad=$edad, ActividadFisica='$actividadFisica', " .
                 " Lesiones='$lesiones' " .
                 "WHERE CodigoCliente=$id";
-            //echo $actualizarCliente;
+            echo $actualizarCliente;
             //exit;
             $resultado = $conexion->query($actualizarCliente);
 
@@ -247,11 +247,12 @@ function visualizarDatosCliente()
 
     $fila = $resultado->fetch_array();
     ?>
-    <form action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
-        <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
-        <div class="container h-100">
-            <div class="row justify-content-center h-100">
-                <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
+
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
+                <form action=" <?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
+                    <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
                     <div class="Modificar">
                         <div class="datosPersonales">
                             <h1 class="">Datos Personales</h1>
@@ -277,15 +278,15 @@ function visualizarDatosCliente()
 
                             <div class="form-group">
                                 <label for="modificarEmail">Email:</label>
-                                <input type="text" value="<?php echo "${fila['CorreoElectronico']}" ?>" class="form-control" id="modificarEmail" name="mail">
+                                <input type="email" value="<?php echo "${fila['CorreoElectronico']}" ?>" class="form-control" id="modificarEmail" name="mail">
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarTelefono">Telefono:</label>
-                                <input type="text" value="<?php echo "${fila['Telefono']}" ?>" class="form-control" id="modificarTelefono" name="mail">
+                                <input type="number" value="<?php echo "${fila['Telefono']}" ?>" class="form-control" id="modificarTelefono" name="telefono">
                             </div>
 
-                            
+
                         </div>
 
                         <div class="datosAdicionales d-flex flex-column justify-content-center align-self-center ">
@@ -297,22 +298,26 @@ function visualizarDatosCliente()
 
                             <div class="form-group">
                                 <label for="modificarPeso">Peso:</label>
-                                <input type="text" value="<?php echo "${fila['Peso']}" ?>" class="form-control" id="modificarPeso" name="peso">
+                                <input type="number" value="<?php echo "${fila['Peso']}" ?>" class="form-control" id="modificarPeso" name="peso">
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarAltura">Altura:</label>
-                                <input type="text" value="<?php echo "${fila['Altura']}" ?>" class="form-control" id="modificarAltura" name="altura">
+                                <input type="number" value="<?php echo "${fila['Altura']}" ?>" class="form-control" id="modificarAltura" name="altura">
                             </div>
 
                             <div class="form-group">
                                 <label for="modificarEdad">Edad:</label>
-                                <input type="text" value="<?php echo "${fila['Edad']}" ?>" class="form-control" id="modificarEdad" name="Edad">
+                                <input type="number" value="<?php echo "${fila['Edad']}" ?>" class="form-control" id="modificarEdad" name="edad">
                             </div>
 
                             <div class="form-group">
                                 <label for="modificaActividadFisica">ActividadFisica:</label>
-                                <input type="text" value="<?php echo "${fila['ActividadFisica']}" ?>" class="form-control" id="modificaActividadFisica" name="actividad">
+                                <select class="form-control" name="actividad" id="modificaActividadFisica">
+                                    <option value="Principiante">Principiante</option>
+                                    <option value="Intermedio">Intermedio</option>
+                                    <option value="Extremo">Extremo</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -320,13 +325,14 @@ function visualizarDatosCliente()
                                 <input type="text" value="<?php echo "${fila['Lesiones']}" ?>" class="form-control" id="modificarLesiones" name="lesiones">
                             </div>
                         </div>
-                        <button type="submit" name="registrar_usuario" class="btn btn-danger rounded-pill boton_enviar w-100"  name="modificar_datos_clientes" >Modificar</button>
-
+                        <button type="submit" class="btn btn-danger rounded-pill boton_enviar w-100" name="modificar_datos_clientes">Modificar</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
+    </div>
+
 <?php
 }
 
