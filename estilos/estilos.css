@@ -282,6 +282,7 @@ section {
    display: none;
 }
 
+
 /*
 
 .boton-checkbox~[class*="a-ocultar"] {
@@ -296,6 +297,48 @@ section {
    align-items: center;
    padding: 5%;
 } */
+
+/*Modificar*/
+.Modificar {
+   background: var(--color-oscuro);
+   border-radius: 8px;
+   box-shadow: 0 0 40px -10px #000;
+   /* padding: 10px 20px; */
+}
+
+.Modificar h1 {
+   padding-bottom: 5px;
+   padding-top: 5px;
+   text-align: center;
+   color: white;
+}
+
+.Modificar div {
+   padding: 5px;
+   color: white;
+}
+
+.Modificar input {
+   background: none;
+   color: white;
+   text-align: center;
+   outline: none;
+   border: 0;
+   transition: all .3s;
+   /* width: 60%; */
+   border-bottom: 2px solid #bebed2;
+}
+
+.Modificar .enviar {
+   background-color: #dd2c00;
+   border: 0;
+   border-radius: 15px;
+   color: white;
+   width: 100%;
+   font-size: 1.5rem;
+   padding: 3%;
+   margin-top: 3%;
+}
 
 @media only screen and (max-width: 991px) {
    .tablas {

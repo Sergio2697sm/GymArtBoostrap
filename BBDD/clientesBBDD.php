@@ -247,12 +247,12 @@ function visualizarDatosCliente()
 
     $fila = $resultado->fetch_array();
     ?>
-    <form class="Modificar" action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
+    <form action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
         <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
         <div class="container h-100">
             <div class="row justify-content-center h-100">
                 <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
-                    <div class="contacto">
+                    <div class="Modificar">
                         <div class="datosPersonales">
                             <h1 class="">Datos Personales</h1>
                             <div class="form-group">

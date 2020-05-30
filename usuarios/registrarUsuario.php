@@ -50,7 +50,7 @@
                                     <input type="email" class="form-control" id="exampleInputPassword1" name="mail" <?php mostrar_campo('mail') ?> placeholder="Introduzca su correo electronico">
                                 </div>
 
-                                <a href="inicioSesion.php"><button class="btn btn-danger rounded-pill boton_enviar">Atras</button></a>
+                                <a href="inicioSesion.php" class="btn btn-danger rounded-pill boton_enviar">Atras</a>
                                 <button type="submit" name="registrar_usuario" class="btn btn-danger rounded-pill boton_enviar">Registrate</button>
                             </form>
                         </div>
