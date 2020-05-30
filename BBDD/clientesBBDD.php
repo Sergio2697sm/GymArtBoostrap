@@ -108,7 +108,7 @@ function verClientes($estado)
     }
     ?>
 
-<?php
+    <?php
     if (isset($_POST["borrar"])) {
         CambiarEstadoClientes();
     }
@@ -246,62 +246,84 @@ function visualizarDatosCliente()
     $resultado = $conexion->query($select_cliente);
 
     $fila = $resultado->fetch_array();
-?>
+    ?>
     <form class="Modificar" action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
         <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
-        <div class="datosPersonales">
-            <h1>Datos Personales</h1>
-            <div>
-                <label>Nombre:</label>
-                <input type="text" value="<?php echo "${fila['Nombre']}" ?>" id="nombre" name="nombre">
-            </div>
-            <div>
-                <label>Apellidos:</label>
-                <input type="text" value="<?php echo "${fila['Apellidos']}" ?>" id="apellidos" name="apellidos">
-            </div>
-            <div>
-                <label>Domicilio:</label>
-                <input type="text" value="<?php echo "${fila['Domicilio']}" ?>" id="domicilio" name="domicilio">
-            </div>
-            <div>
-                <label>Población:</label>
-                <input type="text" value="<?php echo "${fila['Poblacion']}" ?>" id="poblacion" name="poblacion">
-            </div>
-            <div>
-                <label>Email:</label>
-                <input type="text" value="<?php echo "${fila['CorreoElectronico']}" ?>" id="mail" name="mail">
-            </div>
-            <div>
-                <label>Telefono:</label>
-                <input type="number" value="<?php echo "${fila['Telefono']}" ?>" id="movil" name="movil">
-            </div>
-            <label>Observaciones:</label>
-            <input type="text" value="<?php echo "${fila['Observaciones']}" ?>" id="observaciones" name="Observaciones">
-        </div>
+        <div class="container h-100">
+            <div class="row justify-content-center h-100">
+                <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
+                    <div class="contacto">
+                        <div class="datosPersonales">
+                            <h1 class="">Datos Personales</h1>
+                            <div class="form-group">
+                                <label for="ModificarNombre">Nombre:</label>
+                                <input type="text" value="<?php echo "${fila['Nombre']}" ?>" class="form-control" id="ModificarNombre" name="nombre">
+                            </div>
 
-        <div class="datosAdicionales">
-            <h1>Información adicional</h1>
-            <label>Peso:</label>
-            <input type="number" value="<?php echo "${fila['Peso']}" ?>" id="peso" name="peso" placeholder="Kg">
+                            <div class="form-group">
+                                <label for="modificarApellidos">Apellidos:</label>
+                                <input type="text" value="<?php echo "${fila['Apellidos']}" ?>" class="form-control" id="modificarApellidos" name="apellidos">
+                            </div>
 
-            <div>
-                <label>Altura:</label>
-                <input type="number" value="<?php echo "${fila['altura']}" ?>" id="altura" name="altura" placeholder="metros">
-            </div>
-            <div>
-                <label>Edad:</label>
-                <input type="number" value="<?php echo "${fila['edad']}" ?>" id="edad" name="edad">
-            </div>
-            <div>
-                <label>Actividad fisíca:</label>
-                <input type="text" value="<?php echo "${fila['ActividadFisica']}" ?>" id="actividad" name="actividad">
-            </div>
-            <div>
-                <label>Lesiones:</label>
-                <input type="text" value="<?php echo "${fila['Lesiones']}" ?>" id="lesiones" name="lesiones">
+                            <div class="form-group">
+                                <label for="modificarDomicilio">Domicilio:</label>
+                                <input type="text" value="<?php echo "${fila['Domicilio']}" ?>" class="form-control" id="modificarDomicilio" name="domicilio">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificarPoblacion">Poblacion:</label>
+                                <input type="text" value="<?php echo "${fila['Poblacion']}" ?>" class="form-control" id="modificarPoblacion" name="poblacion">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificarEmail">Email:</label>
+                                <input type="text" value="<?php echo "${fila['CorreoElectronico']}" ?>" class="form-control" id="modificarEmail" name="mail">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificarTelefono">Telefono:</label>
+                                <input type="text" value="<?php echo "${fila['Telefono']}" ?>" class="form-control" id="modificarTelefono" name="mail">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificarObservaciones">Observaciones:</label>
+                                <input type="text" value="<?php echo "${fila['Observaciones']}" ?>" class="form-control" id="modificarObservaciones" name="Observaciones">
+                            </div>
+                        </div>
+
+                        <div class="datosAdicionales">
+                            <h1>Información adicional</h1>
+                            <div class="form-group">
+                                <label for="modificarPeso">Peso:</label>
+                                <input type="text" value="<?php echo "${fila['Peso']}" ?>" class="form-control" id="modificarPeso" name="peso">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificarAltura">Altura:</label>
+                                <input type="text" value="<?php echo "${fila['Altura']}" ?>" class="form-control" id="modificarAltura" name="altura">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificarEdad">Edad:</label>
+                                <input type="text" value="<?php echo "${fila['Edad']}" ?>" class="form-control" id="modificarEdad" name="Edad">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificaActividadFisica">ActividadFisica:</label>
+                                <input type="text" value="<?php echo "${fila['ActividadFisica']}" ?>" class="form-control" id="modificaActividadFisica" name="actividad">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modificarLesiones">Lesiones:</label>
+                                <input type="text" value="<?php echo "${fila['Lesiones']}" ?>" class="form-control" id="modificarLesiones" name="lesiones">
+                            </div>
+                        </div>
+                        <button type="submit" name="registrar_usuario" class="btn btn-danger rounded-pill boton_enviar"  name="modificar_datos_clientes" >Modificar</button>
+
+                    </div>
+                </div>
             </div>
         </div>
-        <input type="submit" class="enviar" name="modificar_datos_clientes" value="Modificar">
     </form>
 <?php
 }
