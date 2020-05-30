@@ -303,12 +303,13 @@ section {
    background: var(--color-oscuro);
    border-radius: 8px;
    box-shadow: 0 0 40px -10px #000;
-   /* padding: 10px 20px; */
+   display: grid;
+   grid-template-areas: 
+   "datosPersonales InformacionAdicional"
+   "modificar         modificar";
 }
 
 .Modificar h1 {
-   padding-bottom: 5px;
-   padding-top: 5px;
    text-align: center;
    color: white;
 }
@@ -319,8 +320,8 @@ section {
 }
 
 .Modificar input {
-   background: none;
-   color: white;
+   /* background: none; */
+   /* color: white; */
    text-align: center;
    outline: none;
    border: 0;
@@ -329,15 +330,16 @@ section {
    border-bottom: 2px solid #bebed2;
 }
 
-.Modificar .enviar {
-   background-color: #dd2c00;
-   border: 0;
-   border-radius: 15px;
-   color: white;
-   width: 100%;
-   font-size: 1.5rem;
-   padding: 3%;
-   margin-top: 3%;
+.datosPersonales {
+   grid-area: datosPersonales;
+}
+
+.datosAdicionales {
+   grid-area: InformacionAdicional;
+}
+
+.boton_enviar {
+   grid-area: modificar;
 }
 
 @media only screen and (max-width: 991px) {
@@ -401,6 +403,19 @@ section {
       align-items: center;
       padding: 5%;
    }
+
+   .Modificar {
+      background: var(--color-oscuro);
+      border-radius: 8px;
+      box-shadow: 0 0 40px -10px #000;
+   }
+
+   .Modificar h1 {
+      font-size: 1.2rem;
+      text-align: center;
+      color: white;
+   }
+   
 }
 
 footer {

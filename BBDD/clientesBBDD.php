@@ -285,14 +285,16 @@ function visualizarDatosCliente()
                                 <input type="text" value="<?php echo "${fila['Telefono']}" ?>" class="form-control" id="modificarTelefono" name="mail">
                             </div>
 
+                            
+                        </div>
+
+                        <div class="datosAdicionales d-flex flex-column justify-content-center align-self-center ">
+                            <h1>Información adicional</h1>
                             <div class="form-group">
                                 <label for="modificarObservaciones">Observaciones:</label>
                                 <input type="text" value="<?php echo "${fila['Observaciones']}" ?>" class="form-control" id="modificarObservaciones" name="Observaciones">
                             </div>
-                        </div>
 
-                        <div class="datosAdicionales">
-                            <h1>Información adicional</h1>
                             <div class="form-group">
                                 <label for="modificarPeso">Peso:</label>
                                 <input type="text" value="<?php echo "${fila['Peso']}" ?>" class="form-control" id="modificarPeso" name="peso">
@@ -318,7 +320,7 @@ function visualizarDatosCliente()
                                 <input type="text" value="<?php echo "${fila['Lesiones']}" ?>" class="form-control" id="modificarLesiones" name="lesiones">
                             </div>
                         </div>
-                        <button type="submit" name="registrar_usuario" class="btn btn-danger rounded-pill boton_enviar"  name="modificar_datos_clientes" >Modificar</button>
+                        <button type="submit" name="registrar_usuario" class="btn btn-danger rounded-pill boton_enviar w-100"  name="modificar_datos_clientes" >Modificar</button>
 
                     </div>
                 </div>
