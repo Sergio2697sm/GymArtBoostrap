@@ -11,7 +11,7 @@ if (isset($_POST['cerrar-session'])) {
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/GymArtBoostrap/index.php"><img src="./imagenes/logo1.png" alt=""></a>
+        <a class="navbar-brand" href="/GymArtBoostrap/index.php"><img src="/GymArtBoostrap/imagenes/logo1.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,10 +21,10 @@ if (isset($_POST['cerrar-session'])) {
                 <?php
                 if ($_SESSION) {
                 ?>
-                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/clientes/verClientes.php">Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/monitores/verMonitores.php"> Monitores</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/mensualidades/verMensualidades.php">Mensualidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/pagos/verPagos.php"> Pagos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/clientes/verClientes.php">CLIENTES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/monitores/verMonitores.php"> MONITORES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/mensualidades/verMensualidades.php">MENSUALIDADES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/pagos/verPagos.php"> PAGOS</a></li>
 
                 <?php
                 } else {
@@ -35,17 +35,6 @@ if (isset($_POST['cerrar-session'])) {
                 <?php
                 }
                 ?>
-
-
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">SERVICIO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">QUIENES SOMOS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACTO</a>
-                </li> -->
             </ul>
         </div>
 
@@ -57,7 +46,7 @@ if (isset($_POST['cerrar-session'])) {
                     <p>Bienvenido, <?php echo $_SESSION['usuario']
                                     ?></p>
                     <form action="<?php echo $_SERVER["PHP_SELF"] . "/index.php"  ?>" method="POST">
-                        <input class="botonCerrar" type="submit" value="Cerrar sesión" name="cerrar-session">
+                        <input class="botonCerrar btn btn-danger w-100" type="submit" value="Cerrar sesión" name="cerrar-session">
                     </form>
                 </div>
             <?php
