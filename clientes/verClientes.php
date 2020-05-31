@@ -52,7 +52,6 @@ include '../BBDD/clientesBBDD.php';
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellidos</th>
                                         <th scope="col">Telefono</th>
-                                        <th scope="col">Correo</th>
                                         <th scope="col">Accion</th>
                                     </tr>
                                 </thead>

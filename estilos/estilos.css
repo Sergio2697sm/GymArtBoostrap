@@ -282,22 +282,6 @@ section {
    display: none;
 }
 
-
-/*
-
-.boton-checkbox~[class*="a-ocultar"] {
-   display: none;
-}
-
-.boton-checkbox:checked~[class*="a-ocultar"] {
-   display: initial;
-   display: flex;
-   flex-flow: column;
-   justify-content: center;
-   align-items: center;
-   padding: 5%;
-} */
-
 /*Modificar*/
 .Modificar {
    background: var(--color-oscuro);
@@ -344,28 +328,41 @@ section {
 
 @media only screen and (max-width: 991px) {
    .tablas {
-      max-width: calc(100vw - 40px);
-      height: 100%;
+      width: 100%;
+      /* max-width: calc(100vw - 40px); */
       background: var(--color-oscuro);
       color: white;
       border-radius: 8px;
       display: grid;
-      grid-template-areas: "Titulo     Titulo        Titulo" "buscador   buscador       Buscador" "menuOpciones  menuOpciones   menuOpciones" "clientesInactivos clientesInactivos clientesInactivos" "divTable   divTable     divTable";
+      grid-template-areas: "Titulo     Titulo        Titulo" 
+      "buscador   buscador       Buscador" 
+      "menuOpciones  menuOpciones   menuOpciones" 
+      "clientesInactivos clientesInactivos clientesInactivos" 
+      "divTable   divTable     divTable";
       grid-template-columns: 1fr 1fr;
    }
    .tablas h1 {
       grid-area: Titulo;
+      padding-top: 2%;
       padding-bottom: 2%;
    }
    .descargas {
       grid-area: menuOpciones;
+      padding-top:2%;
+      padding-bottom: 2%;
    }
    .clientesAntiguos {
       grid-area: clientesInactivos;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top:2%;
+      padding-bottom: 2%;
    }
    .table {
       grid-area: divTable;
    }
+  
    .tablas h1 {
       font-size: 1rem;
    }
@@ -375,16 +372,16 @@ section {
       grid-area: buscador;
    }
    #descargaPdf img {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
    }
    #copia img {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
    }
    #anadir img {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
    }
    .tresbotones {
       display: flex;
@@ -402,6 +399,10 @@ section {
       justify-content: center;
       align-items: center;
       padding: 5%;
+   }
+ 
+   .boton {
+      flex-flow: column;
    }
 
    .Modificar {

@@ -75,11 +75,7 @@ function verClientes($estado)
                 </td>
                 <td><?php echo "${fila['Telefono']}"; ?></td>
                 <td>
-                    <input type="checkbox" class="boton-checkbox" id="eChkUsuario<?php echo $contador ?>">
-                    <label for="eChkUsuario<?php echo $contador ?>" class="tresbotones">...</label>
-                    <div class="a-ocultar"><?php echo "${fila['CorreoElectronico']}"; ?></div>
-                </td>
-                <td>
+
                     <div class="boton d-flex justify-content-center align-items-center">
                         <input type="checkbox" class="boton-checkbox" id="eChkBotones<?php echo $contador ?>">
                         <label for="eChkBotones<?php echo $contador ?>" class="tresbotones">...</label>
@@ -128,6 +124,7 @@ function verMas()
     $resultado = $conexion->query($select_cliente);
 
     while ($fila = $resultado->fetch_array()) {
+        $correoElectronico = $fila['CorreoElectronico'];
         $telefono = $fila['Telefono'];
         $poblacion = $fila['Poblacion'];
         $edad = $fila['Edad'];
@@ -140,7 +137,7 @@ function verMas()
 
         echo "<script> Swal.fire({
             title: 'OTRA INFORMACION',
-            html: '<b>Telefono:</b> $telefono </br> <b>poblacion:</b> $poblacion <br> <b>Domicilio:</b> $domicilio <br> <b>Edad:</b> $edad años <br> <b>Altura:</b> $altura metros <br> <b>Peso:</b> $peso kg <br> <b>Lesiones:</b> $lesiones <br><b>Actividad Fisica:</b> $actividadFisica',
+            html: '<b>Correo:</b> $correoElectronico </br> <b>Telefono:</b> $telefono </br> <b>poblacion:</b> $poblacion <br> <b>Domicilio:</b> $domicilio <br> <b>Edad:</b> $edad años <br> <b>Altura:</b> $altura metros <br> <b>Peso:</b> $peso kg <br> <b>Lesiones:</b> $lesiones <br><b>Actividad Fisica:</b> $actividadFisica',
             type: 'error',
           });</script>";
     }
@@ -390,14 +387,14 @@ function anadirClientes()
     $actividadFisica = $_POST["actividad"];
     $lesiones = $_POST["lesiones"];
 
-    // if (strlen($_POST["telefono"]) <= 9) {
-    //     $errores[] = "<script> Swal.fire({
-    //         icon: 'error',
-    //         title: 'Telefono',
-    //         text: 'Numero de telefono incorrecto',
-    //         type: 'error',
-    //       });</script>";
-    // }
+    if (strlen($_POST["telefono"]) < 9) {
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Telefono',
+            text: 'Numero de telefono incorrecto',
+            type: 'error',
+          });</script>";
+    }
 
     if (!validad_email($correoElectronico)) {
         $errores[] = "<script>  Swal.fire({
@@ -416,14 +413,33 @@ function anadirClientes()
         CorreoElectronico,Telefono,Observaciones,Peso,Altura,Edad,ActividadFisica,Lesiones,Activo) 
         VALUES($codigo,'$nombre','$apellidos','$domicilio','$poblacion','$correoElectronico',
         $telefono,'$Observaciones',$peso,$altura,$edad,'$actividadFisica','$lesiones',1)";
-        echo "<p>$anadir_cliente </p>";
+        //echo "<p>$anadir_cliente </p>";
         $resultado = $conexion->query($anadir_cliente);
 
         if ($resultado) {
-            header("Location:verClientes.php");
-            echo "<p>Se ha añadido $conexion->affected_rows registros con exito</p>";
+            echo " <script>
+                Swal.fire({
+                    title: 'Cliente',
+                    text: 'Se ha insertado un cliente correctamente',
+                    icon: 'success',
+                }).then((result) => {
+                    if (result) {
+                        window.location.href = '/GymArtBoostrap/clientes/verClientes.php';
+                    }
+                });
+            </script> ";
         } else {
-            echo "Tuvimos problemas en la insercion, intentelo de nuevo mas tarde";
+            echo "<script> Swal.fire({
+                title: '¡Error!',
+                text: 'No se ha creado el usuario, intentelo mas tarde',
+                type: 'error',
+              });</script>";
         }
     }
+    // if ($resultado) {
+    //     header("Location:verClientes.php");
+    //     echo "<p>Se ha añadido $conexion->affected_rows registros con exito</p>";
+    // } else {
+    //     echo "Tuvimos problemas en la insercion, intentelo de nuevo mas tarde";
+    // }
 }

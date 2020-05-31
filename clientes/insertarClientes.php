@@ -10,13 +10,12 @@ include '../BBDD/clientesBBDD.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insertar Clientes</title>
     <link rel="stylesheet" href="../estilos/estilos.css">
-    <!-- <link rel="stylesheet" href="../estilos/sweetalert.css"> -->
+    <link rel="stylesheet" href="../estilos/sweetalert.css">
 
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -38,32 +37,32 @@ include '../BBDD/clientesBBDD.php';
                                     <h1 class="">Datos Personales</h1>
                                     <div class="form-group">
                                         <label for="ModificarNombre">Nombre:</label>
-                                        <input type="text" class="form-control" id="ModificarNombre" name="nombre">
+                                        <input type="text" class="form-control" <?php mostrar_campo("nombre")?> id="ModificarNombre" name="nombre">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarApellidos">Apellidos:</label>
-                                        <input type="text" class="form-control" id="modificarApellidos" name="apellidos">
+                                        <input type="text" class="form-control" <?php mostrar_campo("apellidos")?> id="modificarApellidos" name="apellidos">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarDomicilio">Domicilio:</label>
-                                        <input type="text" class="form-control" id="modificarDomicilio" name="domicilio">
+                                        <input type="text" class="form-control" <?php mostrar_campo("domicilio")?> id="modificarDomicilio" name="domicilio">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarPoblacion">Poblacion:</label>
-                                        <input type="text" class="form-control" id="modificarPoblacion" name="poblacion">
+                                        <input type="text" class="form-control" <?php mostrar_campo("poblacion")?> id="modificarPoblacion" name="poblacion">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarEmail">Email:</label>
-                                        <input type="text" class="form-control" id="modificarEmail" name="mail">
+                                        <input type="text" class="form-control" <?php mostrar_campo("mail")?> id="modificarEmail" name="mail">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarTelefono">Telefono:</label>
-                                        <input type="number" class="form-control" id="modificarTelefono" name="telefono">
+                                        <input type="number" class="form-control" <?php mostrar_campo("telefono")?> id="modificarTelefono" name="telefono">
                                     </div>
 
 
@@ -73,22 +72,22 @@ include '../BBDD/clientesBBDD.php';
                                     <h1>Información adicional</h1>
                                     <div class="form-group">
                                         <label for="modificarObservaciones">Observaciones:</label>
-                                        <input type="text" class="form-control" id="modificarObservaciones" name="Observaciones">
+                                        <input type="text" class="form-control" <?php mostrar_campo("Observaciones")?> id="modificarObservaciones" name="Observaciones">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarPeso">Peso:</label>
-                                        <input type="text" class="form-control" id="modificarPeso" name="peso">
+                                        <input type="text" class="form-control" <?php mostrar_campo("peso")?> id="modificarPeso" name="peso">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarAltura">Altura:</label>
-                                        <input type="text" class="form-control" id="modificarAltura" name="altura">
+                                        <input type="text" class="form-control" <?php mostrar_campo("altura")?> id="modificarAltura" name="altura">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="modificarEdad">Edad:</label>
-                                        <input type="text" class="form-control" id="modificarEdad" name="edad">
+                                        <input type="text" class="form-control" <?php mostrar_campo("edad")?> id="modificarEdad" name="edad">
                                     </div>
 
                                     <div class="form-group">
@@ -102,7 +101,7 @@ include '../BBDD/clientesBBDD.php';
 
                                     <div class="form-group">
                                         <label for="modificarLesiones">Lesiones:</label>
-                                        <input type="text" class="form-control" id="modificarLesiones" name="lesiones">
+                                        <input type="text" class="form-control" <?php mostrar_campo("lesiones")?> id="modificarLesiones" name="lesiones">
                                     </div>
                                 </div>
                                 <button type="submit" name="anadir_cliente" class="btn btn-danger rounded-pill  w-100 boton_enviar">Insertar</button>
