@@ -1,4 +1,6 @@
 <?php
+//para que no me salga error en el header
+ob_start ();
 include '../funciones/funciones.php';
 //------------------------------------------------BUSCAR CLIENTES ACTIVOS---------------------------------------------------------------------------------------//
 function buscarClientes($estado)
@@ -13,39 +15,38 @@ function buscarClientes($estado)
     while ($fila = $resultado->fetch_array()) {
         $contador++;
 ?>
-        <div class="divTableRow">
-            <div class="divTableCelda"><?php echo "${fila['Nombre']}"; ?></div>
-            <div class="divTableCelda"><?php echo "${fila['Apellidos']}"; ?></div>
-            <div class="divTableCelda"><?php echo "${fila['Telefono']}"; ?></div>
-            <div class="divTableCelda">
-                <input type="checkbox" class="boton-checkbox" id="eChkUsuario<?php echo $contador ?>">
-                <label for="eChkUsuario<?php echo $contador ?>" class="tresbotones">...</label>
-                <div class="a-ocultar"><?php echo "${fila['CorreoElectronico']}"; ?></div>
-            </div>
+       <tbody>
+            <tr>
+                <th scope="row"><?php echo "${fila['Nombre']}"; ?></div>
+                </th>
+                <td><?php echo "${fila['Apellidos']}"; ?></div>
+                </td>
+                <td><?php echo "${fila['Telefono']}"; ?></td>
+                <td>
 
-            <div class="divTableCelda">
-                <div class="boton">
-                    <input type="checkbox" class="boton-checkbox" id="eChkBotones<?php echo $contador ?>">
-                    <label for="eChkBotones<?php echo $contador ?>" class="tresbotones">...</label>
-                    <form class="a-ocultar" action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
-                        <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
-                        <button type="submit" name="verMas"><img src="../imagenes/verMas.png" alt=""></button>
-                    </form>
+                    <div class="boton d-flex justify-content-center align-items-center">
+                        <input type="checkbox" class="boton-checkbox" id="eChkBotones<?php echo $contador ?>">
+                        <label for="eChkBotones<?php echo $contador ?>" class="tresbotones">...</label>
+                        <form class="a-ocultar " action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
+                            <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
+                            <button type="submit" name="verMas"><img src="../imagenes/verMas.png" alt=""></button>
+                        </form>
 
-                    <form class="a-ocultar" name="editar" action="modificarClientes.php" method="POST">
-                        <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
-                        <!-- <input type="submit" name="editar_cliente" value="modificar"> -->
-                        <button type="submit" name="ediar_cliente"><img src="../imagenes/editar.png" alt=""></button>
-                    </form>
+                        <form class="a-ocultar" name="editar" action="modificarClientes.php" method="POST">
+                            <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
+                            <!-- <input type="submit" name="editar_cliente" value="modificar"> -->
+                            <button type="submit" name="ediar_cliente"><img src="../imagenes/editar.png" alt=""></button>
+                        </form>
 
-                    <form class="a-ocultar" action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
-                        <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
-                        <!-- <input type="submit" name="borrar" value="borrar"> -->
-                        <button type="submit" name="borrar"><img src="../imagenes/delete.png" alt=""></button>
-                    </form>
-                </div>
-            </div>
-        </div>
+                        <form class="a-ocultar" action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
+                            <input type='hidden' value="<?php echo "${fila['CodigoCliente']}" ?>" name="id">
+                            <!-- <input type="submit" name="borrar" value="borrar"> -->
+                            <button type="submit" name="borrar"><img src="../imagenes/delete.png" alt=""></button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
     <?php
     }
 }
@@ -163,7 +164,7 @@ function CambiarEstadoClientes()
         $resultado = $conexion->query($cambiarEstadoCliente);
 
         if ($resultado) {
-            echo '<p>Operacion correcta</p>';
+            header("Location:verClientes.php");
         } else {
 
             echo '<p>Tuvimos problemas con la operacion del cliente, intentalo de nuevo más tarde</p>';
@@ -173,11 +174,12 @@ function CambiarEstadoClientes()
             "SET Activo=1 " .
             "WHERE CodigoCliente=$_POST[id]";
 
-        echo $cambiarEstadoClientes;
+        // echo $cambiarEstadoClientes;
         $resultados = $conexion->query($cambiarEstadoClientes);
 
         if ($resultados) {
-            echo '<p>Operacion correcta1</p>';
+            header("Location:verClientes.php");
+            // echo '<p>Operacion correcta1</p>';
         } else {
 
             echo '<p>Tuvimos problemas con la operacion del cliente, intentalo de nuevo más tarde</p>';

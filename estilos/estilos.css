@@ -202,6 +202,7 @@ section {
 
 .tablas h1 {
    grid-area: Titulo;
+   padding-top: 1%;
    padding-bottom: 2%;
 }
 
