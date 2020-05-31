@@ -284,14 +284,13 @@ section {
 }
 
 /*Modificar*/
+
 .Modificar {
    background: var(--color-oscuro);
    border-radius: 8px;
    box-shadow: 0 0 40px -10px #000;
    display: grid;
-   grid-template-areas: 
-   "datosPersonales InformacionAdicional"
-   "modificar         modificar";
+   grid-template-areas: "datosPersonales InformacionAdicional" "modificar         modificar";
 }
 
 .Modificar h1 {
@@ -327,6 +326,20 @@ section {
    grid-area: modificar;
 }
 
+/*modificar mensualidades*/
+
+.ModificarMensualidad {
+   background: var(--color-oscuro);
+   border-radius: 8px;
+   box-shadow: 0 0 40px -10px #000;
+   color: white;
+}
+
+.ModificarMensualidad h1 {
+   text-align: center;
+   color: white;
+}
+
 @media only screen and (max-width: 991px) {
    .tablas {
       width: 100%;
@@ -335,11 +348,7 @@ section {
       color: white;
       border-radius: 8px;
       display: grid;
-      grid-template-areas: "Titulo     Titulo        Titulo" 
-      "buscador   buscador       Buscador" 
-      "menuOpciones  menuOpciones   menuOpciones" 
-      "clientesInactivos clientesInactivos clientesInactivos" 
-      "divTable   divTable     divTable";
+      grid-template-areas: "Titulo     Titulo        Titulo" "buscador   buscador       Buscador" "menuOpciones  menuOpciones   menuOpciones" "clientesInactivos clientesInactivos clientesInactivos" "divTable   divTable     divTable";
       grid-template-columns: 1fr 1fr;
    }
    .tablas h1 {
@@ -349,7 +358,7 @@ section {
    }
    .descargas {
       grid-area: menuOpciones;
-      padding-top:2%;
+      padding-top: 2%;
       padding-bottom: 2%;
    }
    .clientesAntiguos {
@@ -357,13 +366,12 @@ section {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top:2%;
+      padding-top: 2%;
       padding-bottom: 2%;
    }
    .table {
       grid-area: divTable;
    }
-  
    .tablas h1 {
       font-size: 1rem;
    }
@@ -401,23 +409,31 @@ section {
       align-items: center;
       padding: 5%;
    }
- 
    .boton {
       flex-flow: column;
    }
-
    .Modificar {
       background: var(--color-oscuro);
       border-radius: 8px;
       box-shadow: 0 0 40px -10px #000;
    }
-
    .Modificar h1 {
       font-size: 1.2rem;
       text-align: center;
       color: white;
    }
-   
+
+   /*modificar mensualidades*/
+   .ModificarMensualidad {
+      background: var(--color-oscuro);
+      border-radius: 8px;
+      box-shadow: 0 0 40px -10px #000;
+      color: white;
+   }
+   .ModificarMensualidad h1 {
+      text-align: center;
+      color: white;
+   }
 }
 
 footer {

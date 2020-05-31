@@ -1,6 +1,6 @@
 <?php
 include '../BBDD/conexionBBDD.php';
-include '../BBDD/clientesBBDD.php';
+include '../BBDD/mensualidadesBBDD.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,14 +8,13 @@ include '../BBDD/clientesBBDD.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clientes Antiguos</title>
     <link rel="stylesheet" href="../estilos/estilos.css">
     <link rel="stylesheet" href="../estilos/sweetalert.css">
 
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
@@ -38,27 +37,27 @@ include '../BBDD/clientesBBDD.php';
                                 <form action="buscador.php" method="POST">
                                     <div class="input">
                                         <input type="search" name="informacion" id="" class="i_buscar" placeholder="Buscar por apellido o nombre">
-                                        <button type="submit" name="buscarActivo"><img src="../imagenes/lupa.png" alt=""></button>
+                                        <button type="submit" name="buscarInactivo"><img src="../imagenes/lupa.png" alt=""></button>
                                     </div>
                                 </form>
                             </div>
-                            
-                            <div class="clientesAntiguos">
-                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="clientesAntiguos.php">CLIENTES INACTIVOS</a></button>
+
+                            <div class="clientesAntiguos ">
+                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="verMensualidades.php">MENSUALIDADES ACTIVAS</a></button>
                             </div>
                             <table class="table table-striped">
-                                <thead>
+                            <thead>
                                     <tr>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Apellidos</th>
-                                        <th scope="col">Telefono</th>
+                                        <th scope="col">Clase/Equipamiento</th>
+                                        <th scope="col">Días a la semana</th>
+                                        <th scope="col">Precio mensual</th>
                                         <th scope="col">Accion</th>
                                     </tr>
                                 </thead>
                                 <?php
-                                verClientes(1);
-                                if (isset($_POST["buscarActivo"])) {
-                                    buscarClientes(1);
+                                verMensualidades(0);
+                                if (isset($_POST["buscarInactivo"])) {
+                                    buscarMensualidad(0);
                                 }
                                 ?>
                             </table>

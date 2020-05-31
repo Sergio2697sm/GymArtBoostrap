@@ -1,8 +1,8 @@
 <?php
 //para que no me salga error en el header
-ob_start ();
+ob_start();
 include '../funciones/funciones.php';
-//------------------------------------------------BUSCAR CLIENTES ACTIVOS---------------------------------------------------------------------------------------//
+//------------------------------------------------BUSCAR CLIENTES ---------------------------------------------------------------------------------------//
 function buscarClientes($estado)
 {
     $conexion = conectarUsuarios();
@@ -15,7 +15,7 @@ function buscarClientes($estado)
     while ($fila = $resultado->fetch_array()) {
         $contador++;
 ?>
-       <tbody>
+        <tbody>
             <tr>
                 <th scope="row"><?php echo "${fila['Nombre']}"; ?></div>
                 </th>
@@ -247,8 +247,6 @@ function modificarClientes()
                     }
                 });
             </script> ";
-                    // header("Location:verClientes.php");
-                    // echo "<p>Se ha modificado $conexion->affected_rows registros con exito</p>";
                 } else {
                     echo "<script> Swal.fire({
                         title: '¡Error!',
@@ -360,7 +358,6 @@ function visualizarDatosCliente()
             </div>
         </div>
     </div>
-    </div>
 
 <?php
 }
@@ -438,10 +435,4 @@ function anadirClientes()
               });</script>";
         }
     }
-    // if ($resultado) {
-    //     header("Location:verClientes.php");
-    //     echo "<p>Se ha añadido $conexion->affected_rows registros con exito</p>";
-    // } else {
-    //     echo "Tuvimos problemas en la insercion, intentelo de nuevo mas tarde";
-    // }
 }
