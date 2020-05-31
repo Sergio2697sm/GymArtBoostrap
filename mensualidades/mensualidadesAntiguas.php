@@ -48,7 +48,7 @@ include '../BBDD/mensualidadesBBDD.php';
                             <table class="table table-striped">
                             <thead>
                                     <tr>
-                                        <th scope="col">Clase/Equipamiento</th>
+                                        <th scope="col">Cuotas</th>
                                         <th scope="col">Días a la semana</th>
                                         <th scope="col">Precio mensual</th>
                                         <th scope="col">Accion</th>

@@ -25,8 +25,10 @@ function buscarMensualidad($estado)
                 <div class="boton d-flex justify-content-center align-items-center">
                     <input type="checkbox" class="boton-checkbox" id="eChkBotones<?php echo $contador ?>">
                     <label for="eChkBotones<?php echo $contador ?>" class="tresbotones">...</label>
-                    <!-- <form class="a-ocultar " action="<?php //echo $_SERVER["PHP_SELF"]  ?>" method="POST">
-                        <input type='hidden' value="<?php //echo "${fila['CodigoMensualidad']}" ?>" name="id">
+                    <!-- <form class="a-ocultar " action="<?php //echo $_SERVER["PHP_SELF"]  
+                                                            ?>" method="POST">
+                        <input type='hidden' value="<?php //echo "${fila['CodigoMensualidad']}" 
+                                                    ?>" name="id">
                         <button type="submit" name="verMas"><img src="../imagenes/verMas.png" alt=""></button>
                     </form> -->
 
@@ -62,14 +64,17 @@ function verMensualidades($estado)
     ?>
         <tbody>
             <tr>
-                <th scope="row"><?php echo "${fila['Nombre']}"; ?></div></th>
-                <td><?php echo "${fila['DiasSemanas']}"; ?></div></td>
+                <th scope="row"><?php echo "${fila['Nombre']}"; ?>
+                </th>
+                <td><?php echo "${fila['DiasSemanas']}"; ?>
+                </td>
                 <td><?php echo "${fila['Precio']} €"; ?></td>
                 <td>
                     <div class="boton d-flex justify-content-center align-items-center">
                         <input type="checkbox" class="boton-checkbox" id="eChkBotones<?php echo $contador ?>">
                         <label for="eChkBotones<?php echo $contador ?>" class="tresbotones">...</label>
-                        <!-- <form class="a-ocultar " action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
+                        <!-- <form class="a-ocultar " action="<?php //echo $_SERVER["PHP_SELF"]  
+                                                                ?>" method="POST">
                             <input type='hidden' value="<?php //echo "${fila['CodigoMensualidad ']}" 
                                                         ?>" name="id">
                             <button type="submit" name="verMas"><img src="../imagenes/verMas.png" alt=""></button>
@@ -182,7 +187,7 @@ function visualizarDatosPorMensualidad()
     $fila = $resultado->fetch_array();
     ?>
 
-<div class="container h-100">
+    <div class="container h-100">
         <div class="row justify-content-center h-100">
             <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
                 <form action=" <?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">

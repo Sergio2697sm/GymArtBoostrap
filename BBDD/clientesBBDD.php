@@ -70,10 +70,8 @@ function verClientes($estado)
     ?>
         <tbody>
             <tr>
-                <th scope="row"><?php echo "${fila['Nombre']}"; ?></div>
-                </th>
-                <td><?php echo "${fila['Apellidos']}"; ?></div>
-                </td>
+                <td scope="row"><?php echo "${fila['Nombre']}"; ?></td>
+                <td><?php echo "${fila['Apellidos']}"; ?></td>
                 <td><?php echo "${fila['Telefono']}"; ?></td>
                 <td>
 
