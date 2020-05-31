@@ -293,6 +293,18 @@ section {
    grid-template-areas: "datosPersonales InformacionAdicional" "modificar         modificar";
 }
 
+.datosPersonales {
+   grid-area: datosPersonales;
+}
+
+.datosAdicionales {
+   grid-area: InformacionAdicional;
+}
+
+.boton_enviar {
+   grid-area: modificar;
+}
+
 .Modificar h1 {
    text-align: center;
    color: white;
@@ -314,17 +326,6 @@ section {
    border-bottom: 2px solid #bebed2;
 }
 
-.datosPersonales {
-   grid-area: datosPersonales;
-}
-
-.datosAdicionales {
-   grid-area: InformacionAdicional;
-}
-
-.boton_enviar {
-   grid-area: modificar;
-}
 
 /*modificar mensualidades*/
 
