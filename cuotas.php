@@ -20,7 +20,7 @@
 
 
             <div class="container w-100 h-100">
-                <div class="row justify-content-center w-100 h-100">
+                <div class="row justify-content-center  w-100 h-100">
                     <div class="col-sm-8 align-self-center text-center">
                         <div class="cuotas">
 
