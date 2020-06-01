@@ -329,7 +329,6 @@ section {
 /*Graficos*/
 .sectionGraficos {
    background: var(--color-oscuro);
-
 }
 .sectionGraficos h1,label {
  color:white;
