@@ -36,9 +36,10 @@ include '../BBDD/pagosBBDD.php';
                     <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center ">
                          <div class="sectionGraficos">
 
-        <div class="selectGrafico"> 
+        <div class="selectGrafico "> 
+          <h1>GRAFICAS</h1>
           <form action="" method="post">
-            <label>Seleccione la grafica:</label>
+            <label class="labelGrafica">SELECCIONE LA GRAFICA:</label>
             <select onchange="verGraficas()" name="tiposGraficos" id="eSelGraficas">
               <option value="" selected>---------------------</option>
               <option value="graficasBarras">Grafica de barras</option>
@@ -47,7 +48,7 @@ include '../BBDD/pagosBBDD.php';
           </form>
         </div>
 
-        <div id="graficos"></div>
+        <div id="graficos" class="d-flex flex-column justify-content-center align-items-center"></div>
       </div>
                     </div>
                 </div>

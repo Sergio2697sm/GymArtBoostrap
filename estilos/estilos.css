@@ -326,6 +326,14 @@ section {
    border-bottom: 2px solid #bebed2;
 }
 
+/*Graficos*/
+.sectionGraficos {
+   background: var(--color-oscuro);
+
+}
+.sectionGraficos h1,label {
+ color:white;
+}
 
 /*modificar mensualidades*/
 
