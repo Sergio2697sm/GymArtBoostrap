@@ -2,9 +2,9 @@
 //Funcion para mostrar los errores, recorriendo un array
 function mostrar_errores($errores)
 {
-    
+
     foreach ($errores as $error) {
-    echo $error;
+        echo $error;
     }
 }
 
@@ -21,9 +21,25 @@ function validad_email($str)
     return (false !== strpos($str, "@") && false !== strpos($str, "."));
 }
 
+//funcion para validar el DNI
+function validarDni($string)
+{
+    if (strlen($string) != 9 || preg_match('/^([XYZ]?)([0-9]{7,8})([A-Z])$/i', $string, $matches) !== 1)
+        return false;
+
+    $map = 'TRWAGMYFPDXBNJZSQVHLCKE';
+    list(, $nieLetter, $number, $letter) = $matches;
+
+    if ($nieLetter == 'Y')
+        $number = '1' . $number;
+    else if ($nieLetter == 'Z')
+        $number = '2' . $number;
+
+    return strtoupper($letter) === $map[((int) $number) % 23];
+}
 
 // *Funciones Requeridas para los clientes*/
-function maximoCodigoTabla($tabla,$codigo)
+function maximoCodigoTabla($tabla, $codigo)
 {
     $conexion = conectarUsuarios();
     //para insertar el nuevo id

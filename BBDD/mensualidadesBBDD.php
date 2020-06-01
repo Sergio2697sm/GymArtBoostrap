@@ -176,6 +176,7 @@ function modificarMensualidades()
 
     visualizarDatosPorMensualidad();
 }
+
 function visualizarDatosPorMensualidad()
 {
     $conexion = conectarUsuarios();

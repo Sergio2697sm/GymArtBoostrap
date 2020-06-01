@@ -118,7 +118,7 @@ function verClientes($estado)
 function verMas()
 {
     $conexion = conectarUsuarios();
-    $select_cliente = "SELECT * from clientes where CodigoCliente = $_POST[id] ";
+    $select_cliente = "SELECT * FROM clientes WHERE CodigoCliente = $_POST[id] ";
 
     $resultado = $conexion->query($select_cliente);
 
