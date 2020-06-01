@@ -118,22 +118,6 @@ include '../BBDD/conexionBBDD.php';
             }
         }
 
-        // function pagar() {
-        //     var pagar = document.getElementById("pagar");
-        //     if (pagar.value != null) {
-        //         $.ajax({
-        //             url: '../BBDD/pagosBBDD.php',
-        //             type: 'post',
-        //             data: {
-        //                 typePagar: 'pagar',
-        //             },
-        //             dataType: "html",
-        //             success: function(resultado) {
-        //                 window.location.href = '/GymArtBoostrap/pagos/verPagos.php';
-        //             }
-        //         })
-        //     }
-        // }
     </script>
 </body>
 

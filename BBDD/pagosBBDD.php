@@ -4,7 +4,6 @@ include '../BBDD/conexionBBDD.php';
 if (isset($_REQUEST['typePagos']) == 'mostrarpagos') {
   $variable2 = verPagos();
   return $variable2;
-
 }
 
 if (isset($_REQUEST['typeDeudas']) == 'mostrarDeudas') {
@@ -22,10 +21,6 @@ if (isset($_REQUEST['typeCirculo']) == 'mostrarCirculo') {
   return $variable2;
 }
 
-// if (isset($_REQUEST['typePagar']) == 'pagar') {
-//   $variable2 = checkPagar();
-//   return $variable2;
-// }
 
 //-----------------------------------------Graficos Barra---------------------------------//
 function verGraficosBarra()
@@ -316,32 +311,88 @@ function listaDeudores()
         </form>
       </td>
     </tr>
-    <?php
-   
-  }
+  <?php
 
+  }
 }
 
 
-function checkPagar()
+// function checkPagar()
+// {
+
+//   $conexion = conectarUsuarios();
+//   $sql = "UPDATE pagos SET Pagado='Si' WHERE CodigoPago=$_POST[id] ";
+//   echo $sql;
+
+
+//   $resultado = $conexion->query($sql);
+
+//   if (!$resultado) {
+//     echo 'Tuvimos problemas con la operacion del cliente, intentalo de nuevo más tarde';
+//   }
+// }
+
+// //una vez que le de al boton de pagado se me hara la actualizacion del cliente con deudas y se ira a verPagos
+// if (isset($_POST["pagado"])) {
+//   checkPagar();
+//   header("Location:/GymArtBoostrap/pagos/verPagos.php");
+// }
+
+function selectNombreCliente()
 {
-
+  echo "hola";
   $conexion = conectarUsuarios();
-  $sql = "UPDATE pagos SET Pagado='Si' WHERE CodigoPago=$_POST[id] ";
-  echo $sql;
-
-
+  $sql = "SELECT pagos.CodigoCliente as codigoCliente,clientes.nombre as nombreCliente,clientes.Apellidos as apellidos FROM pagos INNER JOIN clientes on pagos.CodigoCliente = clientes.CodigoCliente GROUP BY nombreCliente";
   $resultado = $conexion->query($sql);
-
-  if (!$resultado) {
-    echo 'Tuvimos problemas con la operacion del cliente, intentalo de nuevo más tarde';
+  while ($fila = $resultado->fetch_array()) {
+  ?>
+    <option value="<?php echo "${fila['codigoCliente']}"; ?>"><?php echo "${fila['nombreCliente']}"; ?> <?php echo "${fila['apellidos']}"; ?></option>
+  <?php
   }
 }
-   //la funcion que quiero realizar
-   if (isset($_POST["pagado"])) {
-    header("Location:/GymArtBoostrap/pagos/verPagos.php");
-    checkPagar();
-  }
 
+// //-----------------------------------------Select de las mensualidades de los clientes para insertar un cliente---------------------------------//
+
+function selectMensualidad()
+{
+  $conexion = conectarUsuarios();
+  $sql = "SELECT pagos.CodigoMensualidad as codigoMensualidad,mensualidades.Nombre as nombre FROM pagos INNER JOIN mensualidades on pagos.CodigoMensualidad = mensualidades.CodigoMensualidad GROUP BY nombre";
+  $resultado = $conexion->query($sql);
+  while ($fila = $resultado->fetch_array()) {
+  ?>
+    <option value="<?php echo "${fila['codigoMensualidad']}"; ?>"><?php echo "${fila['nombre']}"; ?></option>
+<?php
+  }
+}
+
+// //-----------------------------------------Insertar Pagos---------------------------------//
+
+function insertarPagos()
+{
+  $conexion = conectarUsuarios();
+  $codigo = maximoCodigoTabla("pagos", "CodigoPago");
+  $insertarPagos = "INSERT INTO pagos (CodigoPago,CodigoCliente,CodigoMensualidad,Mes,Anio,Importe,Deuda,Pagado) VALUES($codigo,$_POST[codigoCliente],$_POST[codigoMensusalidad],'$_POST[mes]',$_POST[anio],$_POST[importe],$_POST[deuda],'$_POST[pagado]')";
+  // echo $insertarPagos;
+  $resultado = $conexion->query($insertarPagos);
+  if ($resultado) {
+    echo " <script>
+          Swal.fire({
+              title: 'Cliente',
+              text: 'Se ha insertado un pago correctamente',
+              icon: 'success',
+          }).then((result) => {
+              if (result) {
+                  window.location.href = '/GymArtBoostrap/pagos/verPagos.php';
+              }
+          });
+      </script> ";
+  } else {
+    echo "<script> Swal.fire({
+          title: '¡Error!',
+          text: 'No se ha creado el usuario, intentelo mas tarde',
+          type: 'error',
+        });</script>";
+  }
+}
 
 ?>
