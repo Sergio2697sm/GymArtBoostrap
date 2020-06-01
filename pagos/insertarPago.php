@@ -76,8 +76,8 @@ include '../funciones/funciones.php';
                                     <div class="form-group d-flex flex-column">
                                         <label for="InsertarPagado">Pagado:</label>
                                         <select name="pagado" id="InsertarPagado">
-                                            <option value="Si">Si</option>
-                                            <option value="Si">No</option>
+                                            <option value="1">Si</option>
+                                            <option value="0">No</option>
                                         </select> </div>
                                   
                                     <button type="submit" name="anadir_Pago" class="btn btn-danger rounded-pill  w-100 boton_enviar">Insertar</button>

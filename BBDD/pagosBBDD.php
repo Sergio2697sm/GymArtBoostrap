@@ -249,7 +249,7 @@ function verPagos()
   $conexion = conectarUsuarios();
   $select_pagos = " SELECT clientes.Nombre as nombreCliente, mensualidades.Nombre as nombreMensualidad, pagos.Mes as mes,pagos.Anio as anio,pagos.Pagado as pagado, pagos.Importe as importe
     FROM mensualidades INNER JOIN pagos INNER JOIN clientes ON mensualidades.CodigoMensualidad = pagos.CodigoMensualidad
-   WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 'Si' AND pagos.Anio='2020'";
+   WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 1 AND pagos.Anio='2020' ORDER BY nombreCliente";
   $resultado = $conexion->query($select_pagos);
   $contador = 0;
 
@@ -291,7 +291,7 @@ function listaDeudores()
     pagos.Anio as anio, 
     pagos.Importe as importe
     FROM mensualidades INNER JOIN pagos INNER JOIN clientes ON mensualidades.CodigoMensualidad = pagos.CodigoMensualidad
-   WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 'No' AND pagos.Anio='2020'";
+   WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 0 AND pagos.Anio='2020'  ORDER BY nombreCliente";
 
 
   $resultado = $conexion->query($select_deudores);
@@ -316,27 +316,21 @@ function listaDeudores()
   }
 }
 
+function checkPagar()
+{
 
-// function checkPagar()
-// {
-
-//   $conexion = conectarUsuarios();
-//   $sql = "UPDATE pagos SET Pagado='Si' WHERE CodigoPago=$_POST[id] ";
-//   echo $sql;
+  $conexion = conectarUsuarios();
+  $sql = "UPDATE pagos SET Pagado=1 WHERE CodigoPago=$_POST[id] ";
+  echo $sql;
 
 
-//   $resultado = $conexion->query($sql);
+  $resultado = $conexion->query($sql);
 
-//   if (!$resultado) {
-//     echo 'Tuvimos problemas con la operacion del cliente, intentalo de nuevo más tarde';
-//   }
-// }
+  if (!$resultado) {
+    echo 'Tuvimos problemas con la operacion del cliente, intentalo de nuevo más tarde';
+  }
+}
 
-// //una vez que le de al boton de pagado se me hara la actualizacion del cliente con deudas y se ira a verPagos
-// if (isset($_POST["pagado"])) {
-//   checkPagar();
-//   header("Location:/GymArtBoostrap/pagos/verPagos.php");
-// }
 
 function selectNombreCliente()
 {
@@ -393,6 +387,12 @@ function insertarPagos()
           type: 'error',
         });</script>";
   }
+}
+
+//una vez que le de al boton de pagado se me hara la actualizacion del cliente con deudas y se ira a verPagos
+if (isset($_POST["pagado"])) {
+  checkPagar();
+  header("Location:/GymArtBoostrap/pagos/verPagos.php");
 }
 
 ?>
