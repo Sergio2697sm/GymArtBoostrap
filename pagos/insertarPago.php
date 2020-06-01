@@ -63,14 +63,18 @@ include '../funciones/funciones.php';
                                         <input type="text" class="form-control" <?php mostrar_campo("anio") ?> id="InsertarAnio" name="anio">
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group d-flex flex-column">
                                         <label for="InsertarImporte">Importe:</label>
-                                        <input type="text" class="form-control" <?php mostrar_campo("importe") ?> id="InsertarImporte" name="importe">
+                                        <select name="importe" id="InsertarImporte">
+                                            <?php
+                                            selectImporte();
+                                            ?>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="InsertarDeuda">Deuda:</label>
-                                        <input type="text" class="form-control" <?php mostrar_campo("deuda") ?> id="InsertarDeuda" name="deuda">
+                                        <input type="text" class="form-control"  <?php mostrar_campo("deuda") ?> id="InsertarDeuda" name="deuda">
                                     </div>
 
                                     <div class="form-group d-flex flex-column">

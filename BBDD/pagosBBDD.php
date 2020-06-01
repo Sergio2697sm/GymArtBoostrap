@@ -359,6 +359,18 @@ function selectMensualidad()
   }
 }
 
+function selectImporte()
+{
+  $conexion = conectarUsuarios();
+  $sql = "SELECT Nombre, Precio from mensualidades WHERE Anio=2020 AND Activo=1";
+  $resultado = $conexion->query($sql);
+  while ($fila = $resultado->fetch_array()) {
+  ?>
+    <option value="<?php echo "${fila['Precio']}"; ?>"><?php echo "${fila['Nombre']} " ,"-" , " ${fila['Precio']} €"; ?></option>
+<?php
+  }
+}
+
 // //-----------------------------------------Insertar Pagos---------------------------------//
 
 function insertarPagos()
