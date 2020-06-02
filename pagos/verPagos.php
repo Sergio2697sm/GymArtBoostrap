@@ -21,11 +21,11 @@ include '../BBDD/conexionBBDD.php';
     include "../header.php";
     ?>
     <main>
-        <section>
+        <section class="h-100">
             <div class="container h-100">
                 <div class="row justify-content-center h-100">
-                    <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center ">
-                        <div class="tablas">
+                    <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
+                        <div class="tablasPagos">
                             <h1 class="">LISTADO DE PAGOS</h1>
 
                             <?php
@@ -46,7 +46,7 @@ include '../BBDD/conexionBBDD.php';
                                     </div>
                             </div>
 
-                            <div class="selectPagos">
+                            <div class="selectPagos d-flex justify-content-center align-items-center">
                                 <form action="" method="post">
                                     <label>Selecciona que tipo de pago quieres visualizar:</label>
                                     <select class="form-control" onchange="enviar()" name="tiposDePagos" id="eSelPagos">
@@ -56,7 +56,7 @@ include '../BBDD/conexionBBDD.php';
                                     </select>
                                 </form>
                             </div>
-                            <table class="table table-striped">
+                            <table class="table table-striped h-100">
                                 <thead>
                                     <tr>
                                         <th scope="col">Nombre</th>

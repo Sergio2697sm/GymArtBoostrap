@@ -25,10 +25,6 @@ header {
    color: white;
 }
 
-nav {
-   font-size: 1.4rem;
-}
-
 main {
    grid-area: main;
    background: url("/GymArtBoostrap/imagenes/fondo.jpg");
@@ -185,7 +181,7 @@ section {
    padding-top: 1%;
 }
 
-/*Tablas(revisar)*/
+/*Tablas*/
 
 .tablas {
    background: var(--color-oscuro);
@@ -327,11 +323,13 @@ section {
 }
 
 /*Graficos*/
+
 .sectionGraficos {
    background: var(--color-oscuro);
 }
-.sectionGraficos h1,label {
- color:white;
+
+.sectionGraficos h1, label {
+   color: white;
 }
 
 /*modificar mensualidades*/
@@ -348,11 +346,49 @@ section {
    color: white;
 }
 
-@media only screen and (max-width: 991px) {
+/*Tablas Pagos*/
+
+.tablasPagos {
+   background: var(--color-oscuro);
+   color: white;
+   border-radius: 8px;
+   box-shadow: 0 0 40px -10px #000;
+   /* padding: 20px 30px; */
+   /* max-width: calc(100vw - 40px); */
+   box-sizing: border-box;
+   display: grid;
+   grid-template-areas: "Titulo     Titulo        Titulo" "buscador   menuOpciones   selectPagos" "divTable   divTable     divTable";
+   /* grid-template-columns: 40% 50% auto; */
+}
+
+.tablasPagos h1 {
+   grid-area: Titulo;
+   padding-top: 1%;
+   padding-bottom: 2%;
+}
+
+.tablasPagos .buscador {
+   grid-area: buscador;
+   width: 95%;
+}
+
+.tablasPagos .descargas {
+   grid-area: menuOpciones;
+}
+
+.tablasPagos .selectPagos {
+   grid-area: selectPagos;
+   width: 100%;
+}
+
+.table {
+   grid-area: divTable;
+}
+
+@media only screen and (max-width: 768px) {
    #tagDivPanorama {
       left: 65px;
    }
-
    .tablas {
       width: 100%;
       /* max-width: calc(100vw - 40px); */
@@ -434,7 +470,6 @@ section {
       text-align: center;
       color: white;
    }
-
    /*modificar mensualidades*/
    .ModificarMensualidad {
       background: var(--color-oscuro);
@@ -445,6 +480,38 @@ section {
    .ModificarMensualidad h1 {
       text-align: center;
       color: white;
+   }
+   /*Tablas Pagos*/
+   .tablasPagos {
+      background: var(--color-oscuro);
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 40px -10px #000;
+      /* padding: 20px 30px; */
+      /* max-width: calc(100vw - 40px); */
+      box-sizing: border-box;
+      display: grid;
+      grid-template-areas: "Titulo     Titulo        Titulo" "buscador   buscador       buscador" "menuOpciones  menuOpciones   menuOpciones" "selectPagos   selectPagos    selectPagos" "divTable   divTable     divTable";
+      /* grid-template-columns: 40% 50% auto; */
+   }
+   .tablasPagos h1 {
+      grid-area: Titulo;
+      padding-top: 1%;
+      padding-bottom: 2%;
+   }
+   .tablasPagos .buscador {
+      grid-area: buscador;
+      width: 95%;
+   }
+   .tablasPagos .descargas {
+      grid-area: menuOpciones;
+   }
+   .tablasPagos .selectPagos {
+      grid-area: selectPagos;
+      width: 100%;
+   }
+   .tablasPagos .table {
+      grid-area: divTable;
    }
 }
 
