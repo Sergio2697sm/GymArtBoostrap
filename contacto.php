@@ -68,9 +68,9 @@
                                     <input type="email" class="form-control" id="exampleInputPassword1" name="correo" placeholder="Escriba aquí su correo">
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group  d-flex flex-column justify-content-center">
                                     <label for="exampleInputPassword1">Mensaje:</label>
-                                    <textarea name="mensaje" cols="30" rows="10" placeholder="Escriba aquí su mensaje..."></textarea>
+                                    <textarea class="w-100" name="mensaje" cols="30" rows="10" placeholder="Escriba aquí su mensaje..."></textarea>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Submit</button>
