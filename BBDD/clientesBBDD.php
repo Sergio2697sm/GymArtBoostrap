@@ -379,7 +379,8 @@ function anadirClientes()
     $Observaciones = $_POST["Observaciones"];
     $peso = $_POST["peso"];
     $altura = $_POST["altura"];
-    // $masaMuscular = $_POST["masaMuscular"];
+    //calcular el induce de masa corporal
+    $imc =($peso/($altura*$altura))*10000;
     $edad = $_POST["edad"];
     $actividadFisica = $_POST["actividad"];
     $lesiones = $_POST["lesiones"];
@@ -407,10 +408,10 @@ function anadirClientes()
         unset($errores);
     } else {
         $anadir_cliente = "INSERT INTO clientes (CodigoCliente,Nombre,Apellidos,Domicilio,Poblacion,
-        CorreoElectronico,Telefono,Observaciones,Peso,Altura,Edad,ActividadFisica,Lesiones,Activo) 
+        CorreoElectronico,Telefono,Observaciones,Peso,Altura,MasaCorporal,Edad,ActividadFisica,Lesiones,Activo) 
         VALUES($codigo,'$nombre','$apellidos','$domicilio','$poblacion','$correoElectronico',
-        $telefono,'$Observaciones',$peso,$altura,$edad,'$actividadFisica','$lesiones',1)";
-        //echo "<p>$anadir_cliente </p>";
+        $telefono,'$Observaciones',$peso,$altura,$imc,$edad,'$actividadFisica','$lesiones',1)";
+        echo "<p>$anadir_cliente </p>";
         $resultado = $conexion->query($anadir_cliente);
 
         if ($resultado) {
