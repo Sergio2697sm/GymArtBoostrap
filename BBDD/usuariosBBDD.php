@@ -164,7 +164,7 @@ function registrarUsuarios()
 }
 
 
-function olvidarContraseña()
+function olvidarContrasena()
 {
     $conexion = conectarUsuarios();
     $contraseña = md5($_POST["contrasena"]);

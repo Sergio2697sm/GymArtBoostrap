@@ -30,7 +30,7 @@ if (isset($_POST['cerrar-session'])) {
                 } else {
                 ?>
                     <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/cuotas.php">SERVICIOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/quienesSomos.php">QUIENES SOMOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/quienesSomos.php">UBICACIÓN</a></li>
                     <li class="nav-item"><a class="nav-link" href="/GymArtBoostrap/contacto.php">CONTACTO</a></li>
                 <?php
                 }
