@@ -129,6 +129,7 @@ function verMas()
         $edad = $fila['Edad'];
         $altura = $fila['Altura'];
         $peso = $fila['Peso'];
+        $imc=$fila["MasaCorporal"];
         $actividadFisica = $fila['ActividadFisica'];
         $lesiones = $fila['Lesiones'];
         $domicilio = $fila['Domicilio'];
@@ -136,7 +137,7 @@ function verMas()
 
         echo "<script> Swal.fire({
             title: 'OTRA INFORMACION',
-            html: '<b>Correo:</b> $correoElectronico </br> <b>Telefono:</b> $telefono </br> <b>poblacion:</b> $poblacion <br> <b>Domicilio:</b> $domicilio <br> <b>Edad:</b> $edad años <br> <b>Altura:</b> $altura metros <br> <b>Peso:</b> $peso kg <br> <b>Lesiones:</b> $lesiones <br><b>Actividad Fisica:</b> $actividadFisica',
+            html: '<b>Correo:</b> $correoElectronico </br> <b>Telefono:</b> $telefono </br> <b>poblacion:</b> $poblacion <br> <b>Domicilio:</b> $domicilio <br> <b>Edad:</b> $edad años <br> <b>Altura:</b> $altura metros <br> <b>Peso:</b> $peso kg <br> <b>IMC:</b>  $imc <br> <b>Lesiones:</b>  $lesiones <br><b>Actividad Fisica:</b> $actividadFisica',
             type: 'error',
           });</script>";
     }
