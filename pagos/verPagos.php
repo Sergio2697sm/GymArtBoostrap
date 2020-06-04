@@ -56,7 +56,7 @@ include '../BBDD/conexionBBDD.php';
                                     </select>
                                 </form>
                             </div>
-                            <table class="table table-striped h-100">
+                            <table class="table text-center table-striped table-bordered h-100">
                                 <thead>
                                     <tr>
                                         <th scope="col">Nombre</th>
@@ -66,15 +66,7 @@ include '../BBDD/conexionBBDD.php';
                                         <th scope="col">Accion</th>
                                     </tr>
                                 </thead>
-                                <tbody id="divTableBody">
-                                </tbody>
-                                <!-- <div class="divTableBody" id="divTableBody"> -->
-                                <?php
-                                // verClientes(1);
-                                // if (isset($_POST["buscarActivo"])) {
-                                //     buscarClientes(1);
-                                // }
-                                ?>
+                                <tbody id="divTableBody"></tbody>
                             </table>
                         </div>
                     </div>
@@ -117,7 +109,6 @@ include '../BBDD/conexionBBDD.php';
                 })
             }
         }
-
     </script>
 </body>
 

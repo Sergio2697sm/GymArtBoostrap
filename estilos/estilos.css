@@ -385,6 +385,8 @@ section {
    grid-area: divTable;
 }
 
+
+
 @media only screen and (max-width: 768px) {
    #tagDivPanorama {
       left: 65px;
@@ -488,7 +490,6 @@ section {
       border-radius: 8px;
       box-shadow: 0 0 40px -10px #000;
       /* padding: 20px 30px; */
-      /* max-width: calc(100vw - 40px); */
       box-sizing: border-box;
       display: grid;
       grid-template-areas: "Titulo     Titulo        Titulo" "buscador   buscador       buscador" "menuOpciones  menuOpciones   menuOpciones" "selectPagos   selectPagos    selectPagos" "divTable   divTable     divTable";
