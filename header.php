@@ -56,10 +56,6 @@ if (isset($_POST['cerrar-session'])) {
             <?php
             }
             ?>
-            <!-- <p>Bienvenido,usuario</p>
-            <button type="submit" class="btn btn-danger">
-                <span class="glyphicon glyphicon-log-out">Cerrar Sesión</span> 
-            </button> -->
         </div>
 
     </nav>
