@@ -385,7 +385,9 @@ section {
    grid-area: divTable;
 }
 
+
 @media only screen and (max-width: 768px) {
+   
    #tagDivPanorama {
       left: 65px;
    }
@@ -398,6 +400,10 @@ section {
       display: grid;
       grid-template-areas: "Titulo     Titulo        Titulo" "buscador   buscador       Buscador" "menuOpciones  menuOpciones   menuOpciones" "clientesInactivos clientesInactivos clientesInactivos" "divTable   divTable     divTable";
       grid-template-columns: 1fr 1fr;
+   }
+
+   .tablas .boton img  {
+      width: 30%;
    }
    .tablas h1 {
       grid-area: Titulo;
@@ -455,10 +461,13 @@ section {
       flex-flow: column;
       justify-content: center;
       align-items: center;
-      padding: 5%;
+      /* padding: 5%; */
    }
    .boton {
-      flex-flow: column;
+      flex-flow: row;
+   }
+   .boton img {
+      width: 45%;
    }
    .Modificar {
       background: var(--color-oscuro);
@@ -505,7 +514,7 @@ section {
    }
    .tablasPagos .buscador {
       grid-area: buscador;
-      width: 95%;
+      width: 100%;
    }
    .tablasPagos .descargas {
       grid-area: menuOpciones;
@@ -518,11 +527,21 @@ section {
       grid-area: divTable;
    }
    .table th, tr,td {
-      /* text-align: center; */
+      padding: 0 !important;
+      margin: 0 !important;
+   }
+   .row {
       padding: 0 !important;
       margin: 0 !important;
    }
 }
+/* 
+ @media only screen and (max-width: 1199px) { 
+   .row {
+      padding: 0 !important;
+      margin: 0 !important;
+   }
+}  */
 
 footer {
    grid-area: footer;

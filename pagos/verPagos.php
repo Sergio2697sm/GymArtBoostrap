@@ -24,7 +24,7 @@ include '../BBDD/conexionBBDD.php';
         <section class="h-100">
             <div class="container h-100">
                 <div class="row justify-content-center h-100">
-                    <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
+                    <div class="tablaGeneral col-xs-12 col-sm-12 col-lg-12 align-self-center text-center w-100">
                         <div class="tablasPagos">
                             <h1 class="">LISTADO DE PAGOS</h1>
 

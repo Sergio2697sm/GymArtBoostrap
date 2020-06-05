@@ -264,17 +264,6 @@ function verPagos()
       <td><?php echo "${fila['importe']} €"; ?></td>
       <td> <input type="checkbox" name="pagado" checked></td>
     </tr>
-
-    <!-- <div class="divTableCelda"><?php //echo "${fila['pagado']}"; 
-                                    ?></div> -->
-    <!-- <div class="divTableCelda">
-                <form action="<?php //echo $_SERVER["PHP_SELF"] 
-                              ?>" method="POST">
-                    <input type="checkbox" name="pagado" checked>
-                </form>
-            </div>
-
-        </div> -->
   <?php
   }
 }

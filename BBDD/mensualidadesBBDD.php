@@ -73,13 +73,7 @@ function verMensualidades($estado)
                     <div class="boton d-flex justify-content-center align-items-center">
                         <input type="checkbox" class="boton-checkbox" id="eChkBotones<?php echo $contador ?>">
                         <label for="eChkBotones<?php echo $contador ?>" class="tresbotones">...</label>
-                        <!-- <form class="a-ocultar " action="<?php //echo $_SERVER["PHP_SELF"]  
-                                                                ?>" method="POST">
-                            <input type='hidden' value="<?php //echo "${fila['CodigoMensualidad ']}" 
-                                                        ?>" name="id">
-                            <button type="submit" name="verMas"><img src="../imagenes/verMas.png" alt=""></button>
-                        </form> -->
-
+                        
                         <form class="a-ocultar" name="editar" action="modificarMensualidad.php" method="POST">
                             <input type='hidden' value="<?php echo "${fila['CodigoMensualidad']}" ?>" name="id">
                             <!-- <input type="submit" name="editar_cliente" value="modificar"> -->
