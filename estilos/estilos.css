@@ -210,6 +210,10 @@ section {
    grid-area: clientesInactivos;
 }
 
+.clientesAntiguos a {
+   color: white;
+}
+
 .table {
    grid-area: divTable;
 }
