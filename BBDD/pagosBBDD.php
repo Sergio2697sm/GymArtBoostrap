@@ -355,7 +355,7 @@ function selectMensualidad()
   while ($fila = $resultado->fetch_array()) {
   ?>
     <option value="<?php echo "${fila['codigoMensualidad']}"; ?>"><?php echo "${fila['nombre']}"; ?></option>
-<?php
+  <?php
   }
 }
 
@@ -366,7 +366,7 @@ function selectImporte()
   $resultado = $conexion->query($sql);
   while ($fila = $resultado->fetch_array()) {
   ?>
-    <option value="<?php echo "${fila['Precio']}"; ?>"><?php echo "${fila['Nombre']} " ,"-" , " ${fila['Precio']} €"; ?></option>
+    <option value="<?php echo "${fila['Precio']}"; ?>"><?php echo "${fila['Nombre']} ", "-", " ${fila['Precio']} €"; ?></option>
 <?php
   }
 }
@@ -377,13 +377,28 @@ function insertarPagos()
 {
   $conexion = conectarUsuarios();
   $codigo = maximoCodigoTabla("pagos", "CodigoPago");
-  $insertarPagos = "INSERT INTO pagos (CodigoPago,CodigoCliente,CodigoMensualidad,Mes,Anio,Importe,Deuda,Pagado) VALUES($codigo,$_POST[codigoCliente],$_POST[codigoMensusalidad],'$_POST[mes]',$_POST[anio],$_POST[importe],$_POST[deuda],'$_POST[pagado]')";
+  $codigoCliente = $_POST["codigoCliente"];
+  $codigoMensualidad = $_POST["codigoMensusalidad"];
+  $mes = $_POST["mes"];
+  $anio = $_POST["anio"];
+  $importe = $_POST["importe"];
+  $pagado = $_POST["pagar"];
+  
+  //si hay un pago no realizado que automaticamente el importe sea igual a la deuda
+  $deuda = 0;
+  if ($pagado == 0) {
+    $deuda = $importe;
+  } else if ($pagado == 1) {
+    $deuda = 0;
+  }
+
+  $insertarPagos = "INSERT INTO pagos (CodigoPago,CodigoCliente,CodigoMensualidad,Mes,Anio,Importe,Deuda,Pagado) VALUES($codigo,$codigoCliente,$codigoMensualidad,'$mes',$anio,$importe,$deuda,'$pagado')";
   // echo $insertarPagos;
   $resultado = $conexion->query($insertarPagos);
   if ($resultado) {
     echo " <script>
           Swal.fire({
-              title: 'Cliente',
+              title: 'Pago',
               text: 'Se ha insertado un pago correctamente',
               icon: 'success',
           }).then((result) => {

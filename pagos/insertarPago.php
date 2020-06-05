@@ -72,14 +72,14 @@ include '../funciones/funciones.php';
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="InsertarDeuda">Deuda:</label>
-                                        <input type="text" class="form-control"  <?php mostrar_campo("deuda") ?> id="InsertarDeuda" name="deuda">
-                                    </div>
+                                        <input type="text" class="form-control"  <?php //mostrar_campo("deuda") ?> id="InsertarDeuda" name="deuda">
+                                    </div> -->
 
                                     <div class="form-group d-flex flex-column">
                                         <label for="InsertarPagado">Pagado:</label>
-                                        <select name="pagado" id="InsertarPagado">
+                                        <select name="pagar" id="InsertarPagado">
                                             <option value="1">Si</option>
                                             <option value="0">No</option>
                                         </select> </div>
