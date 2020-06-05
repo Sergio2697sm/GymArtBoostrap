@@ -46,7 +46,7 @@ include '../BBDD/monitoresBBDD.php';
                             <div class="clientesAntiguos">
                                 <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="monitoresAntiguos.php">MONITORES INACTIVOS</a></button>
                             </div>
-                            <table class="table table-striped">
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th scope="col">Nombre</th>

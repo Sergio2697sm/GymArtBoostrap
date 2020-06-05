@@ -385,8 +385,6 @@ section {
    grid-area: divTable;
 }
 
-
-
 @media only screen and (max-width: 768px) {
    #tagDivPanorama {
       left: 65px;
@@ -483,6 +481,11 @@ section {
       text-align: center;
       color: white;
    }
+
+   .container {
+      padding: 0 !important;
+      margin: 0 !important;
+   }
    /*Tablas Pagos*/
    .tablasPagos {
       background: var(--color-oscuro);
@@ -513,6 +516,11 @@ section {
    }
    .tablasPagos .table {
       grid-area: divTable;
+   }
+   .table th, tr,td {
+      /* text-align: center; */
+      padding: 0 !important;
+      margin: 0 !important;
    }
 }
 

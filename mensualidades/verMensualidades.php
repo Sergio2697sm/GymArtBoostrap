@@ -46,7 +46,7 @@ include '../BBDD/mensualidadesBBDD.php';
                             <div class="clientesAntiguos">
                                 <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="mensualidadesAntiguas.php">MENSUALIDADES ANTIGUAS</a></button>
                             </div>
-                            <table class="table table-striped">
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th scope="col">Cuotas</th>
