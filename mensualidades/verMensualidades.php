@@ -27,7 +27,7 @@ include '../BBDD/mensualidadesBBDD.php';
         <section>
             <div class="container h-100">
                 <div class="row justify-content-center h-100">
-                    <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center ">
+                    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 align-self-center text-center ">
                         <div class="tablas">
                             <h1 class="">LISTADO DE MENSUALIDADES</h1>
 
