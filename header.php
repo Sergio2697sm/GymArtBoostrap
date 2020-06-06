@@ -47,7 +47,7 @@ if (isset($_POST['cerrar-session'])) {
                     <p>Bienvenido, <?php echo $_SESSION['usuario']
                                     ?></p>
                     <form action="<?php echo $_SERVER["PHP_SELF"] . "/index.php"  ?>" method="POST">
-                        <input class="botonCerrar btn btn-danger rounded-pill w-100" type="submit" value="Cerrar sesión" name="cerrar-session">
+                        <input class="botonCerrar btn btn-danger rounded-pill w-100" type="submit" value="CERRAR SESIÓN" name="cerrar-session">
                     </form>
                 </div>
             <?php
