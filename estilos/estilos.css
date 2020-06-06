@@ -362,7 +362,7 @@ section {
    box-sizing: border-box;
    display: grid;
    grid-template-areas: "Titulo     Titulo        Titulo" "buscador   menuOpciones   selectPagos" "divTable   divTable     divTable";
-   /* grid-template-columns: 40% 50% auto; */
+   grid-template-columns: 1fr auto 1fr;
 }
 
 .tablasPagos h1 {
@@ -374,15 +374,21 @@ section {
 .tablasPagos .buscador {
    grid-area: buscador;
    width: 95%;
+   padding-top: 5%;
+
 }
 
 .tablasPagos .descargas {
    grid-area: menuOpciones;
+   width: 100%;
+   /* padding-top: 3%; */
 }
 
 .tablasPagos .selectPagos {
    grid-area: selectPagos;
    width: 100%;
+   padding-top: 5%;
+
 }
 
 .table {

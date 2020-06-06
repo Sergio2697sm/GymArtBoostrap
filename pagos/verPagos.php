@@ -26,36 +26,39 @@ include '../BBDD/conexionBBDD.php';
                 <div class="row justify-content-center h-100">
                     <div class="tablaGeneral col-xs-12 col-sm-12 col-lg-12 align-self-center text-center w-100">
                         <div class="tablasPagos">
-                            <h1 class="">LISTADO DE PAGOS</h1>
+                            <h1 class="text-center">LISTADO DE PAGOS</h1>
 
-                            <?php
-                            include 'menuOpciones.php';
-                            ?>
+                               
 
-                            <div class="buscador">
-                                <form action="buscador.php" method="POST">
-                                    <div class="buscador">
-                                        <form action="buscador.php" method="POST">
-                                            <div class="input">
-                                                <input type="search" name="informacionPorMes" id="" class="i_buscar" placeholder="Buscar por mes">
-                                                <button type="submit" name="buscarMes"><img src="../imagenes/lupa.png" alt=""></button>
-                                                <input type="search" name="informacionPorAnio" id="" class="i_buscar" placeholder="Buscar por año">
-                                                <button type="submit" name="buscarAnio"><img src="../imagenes/lupa.png" alt=""></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                            </div>
+                                <div class="buscador">
+                                    <form action="buscador.php" method="POST">
+                                        <div class="buscador">
+                                            <form action="buscador.php" method="POST">
+                                                <div class="input">
+                                                    <input type="search" name="informacionPorMes" id="" class="i_buscar" placeholder="Buscar por mes">
+                                                    <button type="submit" name="buscarMes"><img src="../imagenes/lupa.png" alt=""></button>
+                                                    <input type="search" name="informacionPorAnio" id="" class="i_buscar" placeholder="Buscar por año">
+                                                    <button type="submit" name="buscarAnio"><img src="../imagenes/lupa.png" alt=""></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                </div>
 
-                            <div class="selectPagos d-flex justify-content-center align-items-center">
-                                <form action="" method="post">
-                                    <label>Selecciona que tipo de pago quieres visualizar:</label>
-                                    <select class="form-control" onchange="enviar()" name="tiposDePagos" id="eSelPagos">
-                                        <option value="" selected>-----------</option>
-                                        <option value="listaPagos">Lista de Pagos</option>
-                                        <option value="listaDeudores">Lista de Deudores</option>
-                                    </select>
-                                </form>
-                            </div>
+                                <?php
+                                include 'menuOpciones.php';
+                                ?>
+
+                                <div class="selectPagos d-flex justify-content-center">
+                                    <form action="" method="post">
+                                        <label>Selecciona que tipo de pago quieres visualizar:</label>
+                                        <select class="form-control" onchange="enviar()" name="tiposDePagos" id="eSelPagos">
+                                            <option value="" selected>-----------</option>
+                                            <option value="listaPagos">Lista de Pagos</option>
+                                            <option value="listaDeudores">Lista de Deudores</option>
+                                        </select>
+                                    </form>
+                                </div>
+                                
                             <table class="table text-center table-striped table-bordered h-100">
                                 <thead>
                                     <tr>

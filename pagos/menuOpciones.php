@@ -1,4 +1,4 @@
-<div class="descargas d-flex justify-content-center">
+<div class="descargas d-flex justify-content-center align-items-center">
     <div id="descargaPdf">
         <abbr title="Descargar Lista en PDF"><a href="generarPDFpagos.php"><img src="../imagenes/descargaDoc.png"></a></abbr>
     </div>
