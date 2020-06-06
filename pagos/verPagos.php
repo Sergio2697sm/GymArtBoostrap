@@ -28,8 +28,6 @@ include '../BBDD/conexionBBDD.php';
                         <div class="tablasPagos">
                             <h1 class="text-center">LISTADO DE PAGOS</h1>
 
-                               
-
                                 <div class="buscador">
                                     <form action="buscador.php" method="POST">
                                         <div class="buscador">

@@ -371,7 +371,6 @@ section {
 .tablasPagos h1 {
    grid-area: Titulo;
    padding-top: 1%;
-   padding-bottom: 2%;
 }
 
 .tablasPagos .buscador {
@@ -384,7 +383,6 @@ section {
 .tablasPagos .descargas {
    grid-area: menuOpciones;
    width: 100%;
-   /* padding-top: 3%; */
 }
 
 .tablasPagos .selectPagos {
