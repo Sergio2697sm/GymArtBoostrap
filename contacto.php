@@ -43,7 +43,7 @@
         <section>
             <div class="container h-100">
                 <div class="row justify-content-center h-100">
-                    <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center">
+                    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 align-self-center text-center">
                         <div class="contacto">
                             <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
 

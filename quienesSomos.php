@@ -16,7 +16,7 @@
     include 'header.php';
     ?>
     <main>
-        <section class="d-flex justify-content-center align-items-center col-xs-12 col-sm-8 col-lg-12">
+        <section class="d-flex justify-content-center align-items-center col-xs-12 col-sm-8 col-md-12 col-lg-12">
             <div id="tagDivMapa" class="mapa"></div>
             <div id="tagDivPanorama" class=""></div>
         </section>
