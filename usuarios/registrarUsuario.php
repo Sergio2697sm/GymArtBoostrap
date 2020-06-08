@@ -32,7 +32,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Usuario:</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="nick" <?php mostrar_campo('usuario') ?> aria-describedby="emailHelp" placeholder="Nombre" required>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="nick" <?php mostrar_campo('nick') ?> aria-describedby="emailHelp" placeholder="Nombre" required>
                                 </div>
 
                                 <div class="form-group">
