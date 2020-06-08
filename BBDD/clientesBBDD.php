@@ -258,8 +258,6 @@ function modificarClientes()
                     " Telefono=$telefono, Observaciones= '$Observaciones', Peso=$peso, Altura = $altura, Edad=$edad, ActividadFisica='$actividadFisica', " .
                     " Lesiones='$lesiones' " .
                     "WHERE CodigoCliente=$id";
-                echo $actualizarCliente;
-                //exit;
                 $resultado = $conexion->query($actualizarCliente);
 
                 if ($resultado) {
