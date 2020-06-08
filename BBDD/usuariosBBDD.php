@@ -97,7 +97,7 @@ function registrarUsuarios()
         $errores[] = "<script> Swal.fire({
             icon: 'error',
             title: 'Contraseña',
-            text: 'La contraseña tiene que tener mas de 2 caracteres',
+            text: 'La contraseña tiene que tener mas de 5 caracteres',
             type: 'error',
           });</script>";
     }
@@ -107,15 +107,6 @@ function registrarUsuarios()
             icon: 'error',
             title: 'Contraseña',
             text: 'La contraseña tienen que ser iguales',
-            type: 'error',
-          });</script>";
-    }
-
-    if (strlen($_POST['mail']) <= 2) {
-        $errores[] = "<script> Swal.fire({
-            icon: 'error',
-            title: 'Correo',
-            text: 'El correo tiene que tener mas de 2 caracteres',
             type: 'error',
           });</script>";
     }
