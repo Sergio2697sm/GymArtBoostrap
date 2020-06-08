@@ -64,7 +64,7 @@ include '../BBDD/conexionBBDD.php';
                                         <th scope="col">Mensualidad</th>
                                         <th scope="col">Mes</th>
                                         <th scope="col">Importe</th>
-                                        <th scope="col">Accion</th>
+                                        <th scope="col">Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody id="divTableBody"></tbody>

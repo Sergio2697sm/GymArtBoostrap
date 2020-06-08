@@ -16,8 +16,6 @@ $pdf = new FPDF();
 //creamos una pagina
 $pdf->AddPage();
 
-//definimos el logo de nuestro documento pdf
-$pdf->Image('../imagenes/logo1.png' , 80 ,0, 0 , 38);
 
 //definimos el estilo del titulo
 $pdf->SetFont("Arial", "B", 16);
@@ -34,12 +32,12 @@ $pdf->SetFont("Arial", "B", 12);
 $conexion = conectarUsuarios();
 $select_pagos = " SELECT clientes.Nombre as nombreCliente, mensualidades.Nombre as nombreMensualidad, pagos.Mes as mes,pagos.Anio as anio,pagos.Pagado as pagado, pagos.Importe as Importe
 FROM mensualidades INNER JOIN pagos INNER JOIN clientes ON mensualidades.CodigoMensualidad = pagos.CodigoMensualidad
-WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 'Si' AND pagos.Anio='2020'";
+WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 1 AND pagos.Anio='2020'";
 
 $resultado = $conexion->query($select_pagos);
 while ($fila = $resultado->fetch_array()) {
     $id = $fila[0];
-    $texto = 'Nombre: ' . $fila["nombreCliente"] . ' mensualidades: ' . $fila["nombreMensualidad"] . ' Mes: ' . $fila["mes"].' Anio: '.$fila["anio"].' Importe: '.$fila["Importe"].' Pagado: '.$fila["pagado"];
+    $texto = 'Nombre: ' . $fila["nombreCliente"] . ' mensualidades: ' . $fila["nombreMensualidad"] . ' Mes: ' . $fila["mes"].' Anio: '.$fila["anio"].' Importe: '.$fila["Importe"].' Pagado: Si';
 
     //escribimos en la pagina   
     $pdf->Write(10, $texto);

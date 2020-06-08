@@ -32,7 +32,7 @@ header("Content-Disposition:attachment; Filename=ListadoClientes.doc");
     $conexion = conectarUsuarios();
     $select_pagos = " SELECT clientes.Nombre as nombreCliente, mensualidades.Nombre as nombreMensualidad, pagos.Mes as mes,pagos.Anio as anio,pagos.Pagado as pagado, pagos.Importe as importe
     FROM mensualidades INNER JOIN pagos INNER JOIN clientes ON mensualidades.CodigoMensualidad = pagos.CodigoMensualidad
-   WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 'Si' AND pagos.Anio='2020'";
+   WHERE clientes.CodigoCliente=pagos.CodigoCliente And pagado = 1 AND pagos.Anio='2020'";
 
     //para recorrer los id para los puntos
     $resultado = $conexion->query($select_pagos);
@@ -44,7 +44,7 @@ header("Content-Disposition:attachment; Filename=ListadoClientes.doc");
         <td><?php echo "${fila['mes']}"; ?></td>
         <td><?php echo "${fila['anio']}"; ?></td>
         <td><?php echo "${fila['importe']}€"; ?></td>
-        <td><?php echo "${fila['pagado']}"; ?></td>
+        <td><?php echo "Si"; ?></td>
       </tr>
     <?php
     }
