@@ -37,17 +37,17 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Contraseña:</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" name="contrasena" <?php mostrar_campo('contrasena') ?> placeholder="Escriba su contraseña">
+                                    <input type="password" class="form-control" id="exampleInputPassword1" name="contrasena" <?php mostrar_campo('contrasena') ?> placeholder="Escriba su contraseña" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Repetir Contraseña:</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" name="contrasena-repetida" <?php mostrar_campo('contrasena-repetida') ?> placeholder="Vuelva a escribir su contraseña">
+                                    <input type="password" class="form-control" id="exampleInputPassword1" name="contrasena-repetida" <?php mostrar_campo('contrasena-repetida') ?> placeholder="Vuelva a escribir su contraseña" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Correo Electrónico:</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1" name="mail" <?php mostrar_campo('mail') ?> placeholder="Introduzca su correo electronico">
+                                    <input type="email" class="form-control" id="exampleInputPassword1" name="mail" <?php mostrar_campo('mail') ?> placeholder="Introduzca su correo electronico" required>
                                 </div>
 
                                 <a href="inicioSesion.php" class="btn btn-danger rounded-pill boton_enviar">Atras</a>
