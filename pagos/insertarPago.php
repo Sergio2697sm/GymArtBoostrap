@@ -72,11 +72,6 @@ include '../funciones/funciones.php';
                                         </select>
                                     </div>
 
-                                    <!-- <div class="form-group">
-                                        <label for="InsertarDeuda">Deuda:</label>
-                                        <input type="text" class="form-control"  <?php //mostrar_campo("deuda") ?> id="InsertarDeuda" name="deuda">
-                                    </div> -->
-
                                     <div class="form-group d-flex flex-column">
                                         <label for="InsertarPagado">Pagado:</label>
                                         <select name="pagar" id="InsertarPagado">
