@@ -7,7 +7,7 @@ include '../BBDD/clientesBBDD.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes Antiguos</title>
+    <title>Clientes Inactivos</title>
     <link rel="stylesheet" href="../estilos/estilos.css">
     <link rel="stylesheet" href="../estilos/sweetalert.css">
 
@@ -26,7 +26,7 @@ include '../BBDD/clientesBBDD.php';
                 <div class="row justify-content-center h-100">
                     <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center ">
                         <div class="tablas">
-                            <h1 class="">LISTADO DE CLIENTES(ACTIVOS)</h1>
+                            <h1 class="">LISTADO DE CLIENTES(INACTIVOS)</h1>
 
                             <?php
                             include 'menuOpciones.php';
@@ -43,7 +43,7 @@ include '../BBDD/clientesBBDD.php';
                             <div class="clientesAntiguos ">
                                 <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="clientesAntiguos.php">CLIENTES INACTIVOS</a></button>
                             </div>
-                            <table class="table table-striped">
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th scope="col">Nombre</th>
