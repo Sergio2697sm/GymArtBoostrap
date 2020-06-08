@@ -64,13 +64,11 @@ function verMensualidades($estado)
     ?>
         <tbody>
             <tr>
-                <th scope="row"><?php echo "${fila['Nombre']}"; ?>
-                </th>
-                <td><?php echo "${fila['DiasSemanas']}"; ?>
-                </td>
+                <td><?php echo "${fila['Nombre']}"; ?></th>
+                <td><?php echo "${fila['DiasSemanas']}"; ?></td>
                 <td><?php echo "${fila['Precio']} €"; ?></td>
                 <td>
-                    <div class="boton d-flex justify-content-center align-items-center">
+                    <div class="botones d-flex justify-content-center align-items-center">
                         <input type="checkbox" class="boton-checkbox" id="eChkBotones<?php echo $contador ?>">
                         <label for="eChkBotones<?php echo $contador ?>" class="tresbotones">...</label>
                         
