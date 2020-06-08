@@ -41,7 +41,7 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-danger rounded-pill boton_enviar">Acceder</button>
-                                <a href="registrarUsuario.php"><button type="button" class="boton_registrar btn btn-danger rounded-pill" value="Registrate">Registrate</button></a>
+                                <a href="registrarUsuario.php"><button type="button" class="boton_registrar btn btn-danger rounded-pill" value="Registrate">Regístrate</button></a>
                                 
                                 <div class="botonAcceso d-flex justify-content-center align-items-center">
                                     <a href="cambiar_contrasena.php"><button type="button" class="boton_olvidar_contrasena btn btn-danger w-100 rounded-pill">¿Olvidaste la contraseña?</button></a>

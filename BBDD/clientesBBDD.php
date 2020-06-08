@@ -332,7 +332,7 @@ function visualizarDatosCliente()
                             </div>
 
                             <div class="form-group">
-                                <label for="modificarTelefono">Telefono:</label>
+                                <label for="modificarTelefono">Teléfono:</label>
                                 <input type="number" value="<?php echo "${fila['Telefono']}" ?>" class="form-control" id="modificarTelefono" name="telefono" required>
                             </div>
 

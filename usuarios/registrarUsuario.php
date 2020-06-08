@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Correo Electronico:</label>
+                                    <label for="exampleInputPassword1">Correo Electrónico:</label>
                                     <input type="email" class="form-control" id="exampleInputPassword1" name="mail" <?php mostrar_campo('mail') ?> placeholder="Introduzca su correo electronico">
                                 </div>
 

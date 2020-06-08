@@ -61,7 +61,7 @@ include '../BBDD/clientesBBDD.php';
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="modificarTelefono">Telefono:</label>
+                                        <label for="modificarTelefono">Teléfono:</label>
                                         <input type="number" class="form-control" <?php mostrar_campo("telefono")?> id="modificarTelefono" name="telefono">
                                     </div>
 

@@ -93,7 +93,7 @@ function registrarUsuarios()
           });</script>";
     }
 
-    if (strlen($_POST['contrasena']) <= 2) {
+    if (strlen($_POST['contrasena']) <= 5) {
         $errores[] = "<script> Swal.fire({
             icon: 'error',
             title: 'Contraseña',
@@ -124,7 +124,7 @@ function registrarUsuarios()
         $errores[] = "<script>  Swal.fire({
             icon: 'error',
             title: 'Correo',
-            text: 'Tiene que ser un correo valido',
+            text: 'Tiene que ser un correo válido',
             type: 'error',
           });</script>";
     }
@@ -184,7 +184,16 @@ function olvidarContrasena()
 
     $errores = [];
 
-    if (strlen($_POST['contrasena']) <= 2) {
+    if (strlen($_POST['contrasena']) <= 5) {
+        $errores[] = "<script>  Swal.fire({
+            icon: 'error',
+            title: 'Contraseña',
+            text: 'La contraseña tiene que tener un minimo de 2 caracteres',
+            type: 'error',
+            });</script>";
+    }
+
+    if (strlen($_POST["contrasena-repetida"]) <= 5) {
         $errores[] = "<script>  Swal.fire({
             icon: 'error',
             title: 'Contraseña',

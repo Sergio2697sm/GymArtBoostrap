@@ -46,7 +46,7 @@
                                 </div>
 
 
-                                <button type="submit" name="recuperarContrasena" class="btn btn-danger rounded-pill boton_enviar">Registrate</button>
+                                <button type="submit" name="recuperarContrasena" class="btn btn-danger rounded-pill boton_enviar">Cambiar</button>
                             </form>
                         </div>
                     </div>
