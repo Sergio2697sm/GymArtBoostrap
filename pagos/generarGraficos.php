@@ -37,18 +37,18 @@ include '../BBDD/pagosBBDD.php';
                          <div class="sectionGraficos">
 
         <div class="selectGrafico "> 
-          <h1>GRAFICAS</h1>
+          <h1>GRÁFICAS</h1>
           <form action="" method="post">
-            <label class="labelGrafica">SELECCIONE LA GRAFICA:</label>
+            <label class="labelGrafica">SELECCIONE LA GRÁFICA:</label>
             <select onchange="verGraficas()" name="tiposGraficos" id="eSelGraficas">
               <option value="" selected>---------------------</option>
-              <option value="graficasBarras">Grafica de barras</option>
-              <option value="graficasCirculares">Grafica Circular</option>
+              <option value="graficasBarras">Gráfica de barras</option>
+              <option value="graficasCirculares">Gráfica Circular</option>
             </select>
           </form>
         </div>
 
-        <div id="graficos" class="d-flex flex-column justify-content-center align-items-center"></div>
+        <div id="graficos" class=" graficos d-flex flex-column justify-content-center align-items-center w-100 h-100"></div>
       </div>
                     </div>
                 </div>

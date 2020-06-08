@@ -338,6 +338,10 @@ section {
    color: white;
 }
 
+.graficoAnio,.graficoMes {
+  width: 100%;
+  padding-bottom: 5px;
+}
 /*modificar mensualidades*/
 
 .ModificarMensualidad {
