@@ -386,6 +386,25 @@ function anadirClientes()
     $actividadFisica = $_POST["actividad"];
     $lesiones = $_POST["lesiones"];
 
+     //este primer if sirve para comprobar que solo se esta metiendo una cadena de caracteres y no numeros
+     if (filter_var($_POST["nombre"],FILTER_SANITIZE_STRING)) {
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Nombre',
+            text: 'No puede contener numeros',
+            type: 'error',
+          });</script>";
+    }
+
+     if (filter_var($_POST["nick"],FILTER_SANITIZE_STRING)) {
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Apellidos',
+            text: 'No puede contener numeros',
+            type: 'error',
+          });</script>";
+    }
+
     if (strlen($_POST["telefono"]) < 9) {
         $errores[] = "<script> Swal.fire({
             icon: 'error',

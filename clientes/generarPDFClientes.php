@@ -32,7 +32,7 @@ $sql = 'SELECT * FROM clientes';
 $resultado = $conexion->query($sql);
 while ($fila = $resultado->fetch_row()) {
     $id = $fila[0];
-    $texto = 'Nombre: ' . $fila[1] . ' Apellidos: ' . $fila[2] . ' Correo Electronico: ' . $fila[3];
+    $texto = 'Nombre: ' . $fila[1] . ' Apellidos: ' . $fila[2] . ' Correo Electronico: ' . $fila[5];
 
     //escribimos en la pagina   
     $pdf->Write(10, $texto);
