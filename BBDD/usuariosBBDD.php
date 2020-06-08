@@ -179,7 +179,7 @@ function olvidarContrasena()
         $errores[] = "<script>  Swal.fire({
             icon: 'error',
             title: 'Contraseña',
-            text: 'La contraseña tiene que tener un minimo de 2 caracteres',
+            text: 'La contraseña tiene que tener un minimo de 5 caracteres',
             type: 'error',
             });</script>";
     }
@@ -188,7 +188,7 @@ function olvidarContrasena()
         $errores[] = "<script>  Swal.fire({
             icon: 'error',
             title: 'Contraseña',
-            text: 'La contraseña tiene que tener un minimo de 2 caracteres',
+            text: 'La contraseña tiene que tener un minimo de 5 caracteres',
             type: 'error',
             });</script>";
     }
