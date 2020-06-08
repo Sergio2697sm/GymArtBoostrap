@@ -6,11 +6,21 @@ function iniciarSesion()
 {
     $errores = [];
     if (empty($_POST['usuario'])) {
-        $errores[] = 'Tiene que rellenar el campo';
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Usuario',
+            text: 'El usuario tiene que estar rellena',
+            type: 'error',
+          });</script>";
     }
 
     if (empty($_POST['contrasena'])) {
-        $errores[] = 'Tiene que rellenar el campo';
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Contraseña',
+            text: 'la contraseña tiene que estar rellena',
+            type: 'error',
+          });</script>";
     }
 
 
