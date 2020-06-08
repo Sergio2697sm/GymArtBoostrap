@@ -1,6 +1,6 @@
 <?php
 include '../BBDD/conexionBBDD.php';
-include '../BBDD/peticiones.php';
+include '../BBDD/mensualidadesBBDD.php';
 
 header("Content-type: application/vnd.ms-word");
 header("Content-Disposition:attachment; Filename=ListadoMensualidades.doc");
@@ -16,19 +16,14 @@ header("Content-Disposition:attachment; Filename=ListadoMensualidades.doc");
 </head>
 
 <body>
-  <h1 align="center">LISTADO DE Mensualidades</h1>
+  <h1 align="center">LISTADO DE MENSUALIDADES</h1>
   <table border="1" align="center">
     <tr>
       <td>Nombre</td>
       <td>Dias de la semana</td>
       <td>Precio</td>
     </tr>
-    <!-- <div>
-    <div>Nombre</div>
-    <div>Apellidos</div>
-    <div>Correo</div>
-  </div> -->
-
+    
     <?php
     $conexion = conectarUsuarios();
     $select_cliente = "SELECT * from mensualidades";

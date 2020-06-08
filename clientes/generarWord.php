@@ -1,6 +1,6 @@
 <?php
 include '../BBDD/conexionBBDD.php';
-include '../BBDD/peticiones.php';
+include '../BBDD/clientesBBDD.php';
 
 header("Content-type: application/vnd.ms-word");
 header("Content-Disposition:attachment; Filename=ListadoClientes.doc");
@@ -23,11 +23,6 @@ header("Content-Disposition:attachment; Filename=ListadoClientes.doc");
       <td>Apellidos</td>
       <td>Correo</td>
     </tr>
-    <!-- <div>
-    <div>Nombre</div>
-    <div>Apellidos</div>
-    <div>Correo</div>
-  </div> -->
 
     <?php
     $conexion = conectarUsuarios();
