@@ -280,8 +280,6 @@ function modificarClientes()
                       });</script>";
                 }
             }
-            //Vamos a realizar una consulta UPDATE para actuliazar los datos de los clientes
-
         }
     }
 
