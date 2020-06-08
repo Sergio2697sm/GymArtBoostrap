@@ -8,7 +8,7 @@ include '../BBDD/monitoresBBDD.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitores</title>
+    <title>Buscar Monitores</title>
     <link rel="stylesheet" href="../estilos/estilos.css">
     <link rel="stylesheet" href="../estilos/sweetalert.css">
 
@@ -29,7 +29,7 @@ include '../BBDD/monitoresBBDD.php';
                 <div class="row justify-content-center h-100">
                     <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center ">
                         <div class="tablas">
-                            <h1 class="">LISTADO DE MONITORES(ACTIVOS)</h1>
+                            <h1 class="">BUSCADOR DE Monitores</h1>
 
                             <?php
                             include 'menuOpciones.php';
@@ -44,7 +44,7 @@ include '../BBDD/monitoresBBDD.php';
                             </div>
 
                             <div class="clientesAntiguos">
-                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="verMonitores.php">CLIENTES ACTIVOS</a></button>
+                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="verMonitores.php">MONITORES ACTIVOS</a></button>
                             </div>
                             <table class="table table-striped">
                                 <thead>

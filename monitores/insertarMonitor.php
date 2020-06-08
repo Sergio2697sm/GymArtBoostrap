@@ -46,7 +46,7 @@ include '../BBDD/monitoresBBDD.php';
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="modificarTelefono">Telefono:</label>
+                                        <label for="modificarTelefono">Teléfono:</label>
                                         <input type="number"  class="form-control text-center" <?php mostrar_campo("telefono")?> id="modificarTelefono" name="telefono" required>
                                     </div>
 
@@ -59,7 +59,6 @@ include '../BBDD/monitoresBBDD.php';
                                         <label for="modificarSalario">Salario:</label>
                                         <input type="number" class="form-control text-center" <?php mostrar_campo("salario")?> id="modificarSalario" name="salario" required>
                                     </div>
-
                                 </div>
                                 <button type="submit" class="btn btn-danger rounded-pill boton_enviar w-100" name="insertarMonitor">Insertar</button>
                             </div>

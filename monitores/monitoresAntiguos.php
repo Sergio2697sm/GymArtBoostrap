@@ -44,15 +44,15 @@ include '../BBDD/monitoresBBDD.php';
                             </div>
                             
                             <div class="clientesAntiguos">
-                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="clientesAntiguos.php">CLIENTES INACTIVOS</a></button>
+                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="verMonitores.php">MONITORES INACTIVOS</a></button>
                             </div>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellidos</th>
-                                        <th scope="col">Telefono</th>
-                                        <th scope="col">Accion</th>
+                                        <th scope="col">Teléfono</th>
+                                        <th scope="col">Acción</th>
                                     </tr>
                                 </thead>
                                 <?php

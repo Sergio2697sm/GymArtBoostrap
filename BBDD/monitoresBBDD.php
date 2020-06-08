@@ -177,6 +177,24 @@ function modificarMonitor()
             $telefono = $_POST["telefono"];
             $salario = $_POST["salario"];
 
+            if (validarNombre($nombre)) {
+                $errores[] = "<script> Swal.fire({
+                    icon: 'error',
+                    title: 'Nombre',
+                    text: 'No puede contener numeros',
+                    type: 'error',
+                  });</script>";
+            }
+
+            if (validarNombre($apellidos)) {
+                $errores[] = "<script> Swal.fire({
+                    icon: 'error',
+                    title: 'Nombre',
+                    text: 'No puede contener numeros',
+                    type: 'error',
+                  });</script>";
+            }
+
             if (validarDni($dni)) {
                 $errores[] = "<script>  Swal.fire({
                     icon: 'error',
@@ -305,6 +323,24 @@ function anadirMonitor()
     $dni = $_POST["dni"];
     $telefono = $_POST["telefono"];
     $salario = $_POST["salario"];
+
+    if (validarNombre($nombre)) {
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Nombre',
+            text: 'No puede contener numeros',
+            type: 'error',
+          });</script>";
+    }
+
+    if (validarNombre($apellidos)) {
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Nombre',
+            text: 'No puede contener numeros',
+            type: 'error',
+          });</script>";
+    }
 
     if (validarDni($dni)) {
         $errores[] = "<script>  Swal.fire({
