@@ -211,6 +211,34 @@ function modificarClientes()
             $actividadFisica = $_POST["actividad"];
             $lesiones = $_POST["lesiones"];
 
+            if (validarNombre($nombre)) {
+                $errores[] = "<script> Swal.fire({
+                    icon: 'error',
+                    title: 'Nombre',
+                    text: 'No puede contener numeros',
+                    type: 'error',
+                  });</script>";
+            }
+          
+            if (validarNombre($apellidos)) {
+                $errores[] = "<script> Swal.fire({
+                    icon: 'error',
+                    title: 'Apellidos',
+                    text: 'No puede contener numeros',
+                    type: 'error',
+                  });</script>";
+            }
+
+            if (strlen($_POST["telefono"]) < 9) {
+                $errores[] = "<script> Swal.fire({
+                    icon: 'error',
+                    title: 'Telefono',
+                    text: 'Numero de telefono incorrecto',
+                    type: 'error',
+                  });</script>";
+            }
+
+
             if (!validad_email($correoElectronico)) {
                 $errores[] = "<script>  Swal.fire({
                     icon: 'error',
