@@ -29,7 +29,7 @@ include '../BBDD/monitoresBBDD.php';
                 <div class="row justify-content-center h-100">
                     <div class="col-xs-12 col-sm-8 col-lg-12 align-self-center text-center ">
                         <div class="tablas">
-                            <h1 class="">BUSCADOR DE Monitores</h1>
+                            <h1 class="">BUSCADOR DE MONITORES</h1>
 
                             <?php
                             include 'menuOpciones.php';

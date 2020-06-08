@@ -43,7 +43,7 @@ include '../BBDD/mensualidadesBBDD.php';
                             </div>
 
                             <div class="clientesAntiguos ">
-                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="verClientes.php">CLIENTES ACTIVOS</a></button>
+                                <button class="botonDerecha btn btn-danger rounded-pill float-right"><a href="verMensualidades.php">MENSUALIDADES ACTIVOS</a></button>
                             </div>
                             <table class="table table-striped">
                                 <thead>
@@ -51,7 +51,7 @@ include '../BBDD/mensualidadesBBDD.php';
                                         <th scope="col">Clase/Equipamiento</th>
                                         <th scope="col">Días a la semana</th>
                                         <th scope="col">Precio mensual</th>
-                                        <th scope="col">Accion</th>
+                                        <th scope="col">Acción</th>
                                     </tr>
                                 </thead>
                                 <?php

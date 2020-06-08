@@ -20,7 +20,7 @@ $pdf->AddPage();
 //definimos el estilo del titulo
 $pdf->SetFont("Arial", "B", 16);
 
-$titulo="Lista de Clientes";
+$titulo="Lista de Monitores";
 //definimos los bordes y el titulo
 $pdf->Cell(60,20,$titulo,1,1,"C");
 $pdf->Ln(10);

@@ -149,6 +149,15 @@ function modificarMensualidades()
             $diasSemana = $_POST["diasSemana"];
             $precio = $_POST["precio"];
 
+            if (validarNombre($nombre)) {
+                $errores[] = "<script> Swal.fire({
+                    icon: 'error',
+                    title: 'Nombre',
+                    text: 'No puede contener numeros',
+                    type: 'error',
+                  });</script>";
+            }
+
             //Vamos a realizar una consulta UPDATE para actuliazar los datos de los clientes
             $actualizarMensualidades =
                 "UPDATE mensualidades 
@@ -213,22 +222,6 @@ function visualizarDatosPorMensualidad()
 <?php
 }
 
-
-// function borrarMensualidades()
-// {
-//     $conexion = conectarUsuarios();
-
-//     $borrar_cliente = "DELETE from mensualidades WHERE id=$_POST[id]";
-//     $resultado = $conexion->query($borrar_cliente);
-
-//     if ($resultado) {
-//         header("Location:verMensualidades.php");
-//         echo '<p>Se ha borrado un cliente' . $conexion->affected_rows . ' registro con exito</p>';
-//     } else {
-//         echo '<p>Tuvimos problemas con la eliminacion del clientes, intentalo de nuevo más tarde</p>';
-//     }
-// }
-
 function insertarMensualidad()
 {
     $conexion = conectarUsuarios();
@@ -239,6 +232,15 @@ function insertarMensualidad()
     $diasSemana = $_POST["diasSemana"];
     $precio = $_POST["precio"];
     $anio = $_POST["anio"];
+
+    if (validarNombre($nombre)) {
+        $errores[] = "<script> Swal.fire({
+            icon: 'error',
+            title: 'Nombre',
+            text: 'No puede contener numeros',
+            type: 'error',
+          });</script>";
+    }
 
     $anadir_mensualidad = "INSERT INTO mensualidades (CodigoMensualidad,Nombre,DiasSemanas,Precio,Anio) 
             VALUES($id,'$nombre',$diasSemana,$precio,$anio)";

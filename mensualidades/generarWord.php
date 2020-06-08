@@ -16,7 +16,7 @@ header("Content-Disposition:attachment; Filename=ListadoMensualidades.doc");
 </head>
 
 <body>
-  <h1 align="center">LISTADO DE CLIENTES</h1>
+  <h1 align="center">LISTADO DE Mensualidades</h1>
   <table border="1" align="center">
     <tr>
       <td>Nombre</td>
