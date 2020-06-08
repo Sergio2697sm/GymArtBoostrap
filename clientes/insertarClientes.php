@@ -22,7 +22,7 @@ include '../BBDD/clientesBBDD.php';
     <?php
     include '../header.php';
     if (isset($_POST["anadir_cliente"])) {
-        anadirClientes();
+        insertarClientes();
     }
 
     ?>

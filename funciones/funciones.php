@@ -38,6 +38,13 @@ function validarDni($string)
     return strtoupper($letter) === $map[((int) $number) % 23];
 }
 
+//funcion para validar solo texto
+function validarNombre($campo) {
+    if (!preg_match("/^[a-zA-Z]+/", $campo)) {
+       return true;
+    }
+}
+
 // *Funciones Requeridas para los clientes*/
 function maximoCodigoTabla($tabla, $codigo)
 {

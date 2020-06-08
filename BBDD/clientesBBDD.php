@@ -129,7 +129,7 @@ function verMas()
         $edad = $fila['Edad'];
         $altura = $fila['Altura'];
         $peso = $fila['Peso'];
-        $imc=$fila["MasaCorporal"];
+        $imc = $fila["MasaCorporal"];
         $actividadFisica = $fila['ActividadFisica'];
         $lesiones = $fila['Lesiones'];
         $domicilio = $fila['Domicilio'];
@@ -365,7 +365,7 @@ function visualizarDatosCliente()
 
 //------------------------------------------------AÑADIR CLIENTES---------------------------------------------------------------------------------------//
 
-function anadirClientes()
+function insertarClientes()
 {
     $conexion = conectarUsuarios();
 
@@ -381,13 +381,13 @@ function anadirClientes()
     $peso = $_POST["peso"];
     $altura = $_POST["altura"];
     //calcular el induce de masa corporal
-    $imc =($peso/($altura*$altura))*10000;
+    $imc = ($peso / ($altura * $altura)) * 10000;
     $edad = $_POST["edad"];
     $actividadFisica = $_POST["actividad"];
     $lesiones = $_POST["lesiones"];
 
-     //este primer if sirve para comprobar que solo se esta metiendo una cadena de caracteres y no numeros
-     if (filter_var($_POST["nombre"],FILTER_SANITIZE_STRING)) {
+    $errores = [];
+    if (validarNombre($nombre)) {
         $errores[] = "<script> Swal.fire({
             icon: 'error',
             title: 'Nombre',
@@ -395,8 +395,8 @@ function anadirClientes()
             type: 'error',
           });</script>";
     }
-
-     if (filter_var($_POST["nick"],FILTER_SANITIZE_STRING)) {
+  
+    if (validarNombre($apellidos)) {
         $errores[] = "<script> Swal.fire({
             icon: 'error',
             title: 'Apellidos',
@@ -431,7 +431,7 @@ function anadirClientes()
         CorreoElectronico,Telefono,Observaciones,Peso,Altura,MasaCorporal,Edad,ActividadFisica,Lesiones,Activo) 
         VALUES($codigo,'$nombre','$apellidos','$domicilio','$poblacion','$correoElectronico',
         $telefono,'$Observaciones',$peso,$altura,$imc,$edad,'$actividadFisica','$lesiones',1)";
-        echo "<p>$anadir_cliente </p>";
+        // echo "<p>$anadir_cliente </p>";
         $resultado = $conexion->query($anadir_cliente);
 
         if ($resultado) {
