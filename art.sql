@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2020 a las 23:43:55
+-- Tiempo de generación: 08-06-2020 a las 20:03:36
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -52,19 +52,25 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`CodigoCliente`, `Nombre`, `Apellidos`, `Domicilio`, `Poblacion`, `CorreoElectronico`, `Telefono`, `Observaciones`, `Peso`, `Altura`, `MasaCorporal`, `Edad`, `ActividadFisica`, `Lesiones`, `Activo`) VALUES
 (6, 'Oscar', 'Ruiz', 'C/Franco', 'lorca', 'oscar@oscar.com', 987654321, 'NO', '23.00', '198.00', 0, 32, 'Principiante', 'NO', 0),
-(7, 'Ignatius', 'J. Reilly', 'Farras Street N_43', 'New Orleans', 'diosaFortuna@gmail.com', 634412066, 'Demasiadas', '96.22', '1.92', 0, 32, 'Intermedio', 'No', 1),
+(7, 'Ignatius', 'J. Reilly', 'Farras Street N_43', 'New Orleans', 'diosaFortuna@gmail.com', 634412066, 'Demasiadas', '96.22', '1.92', 0, 32, 'Principiante', 'No', 1),
 (8, 'Zeus', 'Jupiter Aguilar', 'Calle Olimpo', 'Murcia', 'animalZeus@gmail.com', 634412066, 'No', '72.12', '2.02', 0, 54, 'Si', 'No', 1),
 (10, 'Miller', 'Kazuhira Hasagaska', 'House of the rising sun Nº51', 'Outher Heaven', 'keepyouwaiting@hum.com', 623456788, 'Necesito ganar agilidad y destreza', '67.32', '1.67', 0, 33, 'CQC(judo)', 'Actualmente no', 1),
 (11, 'gdfg', 'fgdf', 'fdgd', 'fgd', 'fdgd', 4234234, 'fd', '43.00', '12.00', 0, 23, 'Intermedio', '2342', 0),
 (12, 'Maria', 'Martinez', 'lsfalkfl', 'Lorca', 'maria@maria.com', 654321234, 'ninguna', '56.00', '197.00', 0, 22, 'Principiante', 'no', 1),
-(13, 'hola', 'adios', 'lkfnsalkn', 'lorca', 'sergio2m@gmail.com', 654321234, 'nada', '54.00', '156.00', 0, 24, 'Intermedio', 'No', 1),
-(14, 'Hola', 'adios', 'Calle', 'kwlsjl', 'ser@ser.com', 654321234, 'Si', '43.00', '21.00', 21, 975, 'Intermedio', 'No', 1),
-(15, 'gsjlkj', 'gksdjlkdshjk', 'kfjslkfjalj', 'dkjlksjglksjl', 'sergio2m@gmail.com', 654321234, 'No', '45.00', '176.00', 32, 14, 'Intermedio', 'No', 1),
+(14, 'Hola', 'adios', 'Calle', 'kwlsjl', 'ser@ser.com', 654321234, 'Si', '43.00', '21.00', 21, 975, 'Intermedio', 'No', 0),
 (16, 'Alex', 'Martinez', 'eaee', 'Lorca', 'alex@alex.com', 654321345, 'No', '54.00', '187.00', 0, 26, 'Intermedio', 'No', 0),
 (17, 'Juan', 'Martinez', 'klfjsalj', 'Lorca', 'juan@juan.com', 654567654, 'No', '65.00', '65.00', 0, 43, 'Intermedio', 'No', 0),
 (18, 'Lucia', 'Caparros', 'ñlfsañl', 'Lorca', 'lucia@lucia.ocm', 654321345, 'No', '65.00', '176.00', 0, 32, 'Intermedio', 'No', 0),
 (19, 'Alturo', 'García', 'opajfoepj', 'Lorca', 'alturo@alturo.com', 675432154, 'No', '43.00', '154.00', 0, 54, 'Principiante', 'No', 0),
-(20, 'Angela', 'Diaz', 'kflka', 'Lorca', 'angela24@angela.com', 765438765, 'No', '76.00', '52.00', 0, 24, 'Intermedio', 'No', 0);
+(20, 'Angela', 'Diaz', 'kflka', 'Lorca', 'angela24@angela.com', 765438765, 'No', '76.00', '52.00', 0, 24, 'Intermedio', 'No', 0),
+(21, 'Pedro', 'Martinez', 'hola', 'el', 'el@el.com', 654321234, 'no', '45.00', '176.00', 0, 22, 'Intermedio', 'No', 1),
+(23, 'Juan', 'Martinez', 'jfjpwa', 'psojfpjp', 'juan@juan.com', 678908765, 'No', '65.00', '176.00', 21, 22, 'Intermedio', 'No', 1),
+(24, 'Alex', 'Garcia', 'Las lomas 32', 'Lorca', 'alexG@gmail.com', 654321234, 'No', '65.00', '187.00', 19, 54, 'Intermedio', 'No', 1),
+(25, 'Ana', 'Garcia', 'La viña', 'Lorca', 'ana@gmail.com', 678987653, 'No', '65.00', '165.00', 24, 21, 'Intermedio', 'No', 1),
+(28, 'Pedro', 'Oliver', 'Lorqui', 'Avenida Lorca', 'pedro@gmail.com', 654321345, 'No', '65.00', '154.00', 27, 32, 'Principiante', 'No', 1),
+(29, 'Pedro', 'Andujar', 'Lorqui21', 'Lorca', '32a@gmail.com', 654321234, 'No', '43.00', '176.00', 14, 31, 'Principiante', 'No', 1),
+(30, 'Maria Dolores', 'Teruel', 'Juan Carlos ', 'Lorca', 'maria@gmail.com', 654321345, 'No', '54.00', '187.00', 15, 54, 'Intermedio', 'No', 1),
+(31, 'Paula', 'Martinez', 'san crstobal 20', 'Lorca', 'paula@gmail.com', 654321983, 'No', '54.00', '176.00', 17, 43, 'Principiante', 'No', 1);
 
 -- --------------------------------------------------------
 
@@ -131,8 +137,8 @@ CREATE TABLE `pagos` (
   `CodigoMensualidad` int(11) NOT NULL,
   `Mes` varchar(10) NOT NULL,
   `Anio` int(4) NOT NULL,
-  `Importe` int(4) NOT NULL,
-  `Deuda` int(4) NOT NULL,
+  `Importe` float NOT NULL,
+  `Deuda` float NOT NULL,
   `Pagado` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -153,13 +159,13 @@ INSERT INTO `pagos` (`CodigoPago`, `CodigoCliente`, `CodigoMensualidad`, `Mes`, 
 (13, 16, 1, 'Junio', 2020, 44, 21, 1),
 (14, 20, 4, 'Junio', 2020, 20, 34, 1),
 (15, 16, 2, 'Abril', 2020, 30, 20, 1),
-(16, 12, 2, 'Abril', 2020, 20, 20, 0),
+(16, 12, 2, 'Abril', 2020, 20, 20, 1),
 (17, 8, 1, 'Abril', 2020, 30, 10, 1),
 (18, 10, 3, 'Febrero', 2020, 30, 10, 1),
 (19, 16, 1, 'Febrero', 2020, 20, 10, 0),
 (20, 12, 2, 'Diciembre', 2020, 20, 10, 1),
 (21, 11, 1, 'Diciembre', 2020, 50, 20, 0),
-(22, 8, 1, 'Junio', 2020, 30, 29, 1);
+(26, 12, 1, 'Junio', 2021, 29.9, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -181,7 +187,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`CodigoUsuario`, `Nombre`, `Contrasena`, `Email`) VALUES
 (1, 'andresete', 'be76e1cab391a5fb0e9d5cc117efa1ad', 'andresdavid@gmail.com'),
 (2, 'Maria Jose Teruel', 'e8dc8ccd5e5f9e3a54f07350ce8a2d3d', 'mariajose.teruel2@murciaeduca.es'),
-(3, 'sergio', '3bffa4ebdf4874e506c2b12405796aa5', 'sergio2m@gmail.com'),
+(3, 'sergio', 'c4dd4b38a5ad0febdc1bf42c343a900f', 'sergio2m@gmail.com'),
 (4, 'pepe', '926e27eecdbc7a18858b3798ba99bddd', 'pepe@pepe.com'),
 (5, 'alfredo', '9450476b384b32d8ad8b758e76c98a69', 'hola@hola.com'),
 (6, 'lola', 'fceeb9b9d469401fe558062c4bd25954', 'lola@lola.com');
@@ -236,7 +242,7 @@ ALTER TABLE `monitores`
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `CodigoPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `CodigoPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Restricciones para tablas volcadas
