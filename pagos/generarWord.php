@@ -1,6 +1,6 @@
 <?php
 include '../BBDD/conexionBBDD.php';
-include '../BBDD/peticiones.php';
+include '../BBDD/pagosBBDD.php';
 
 header("Content-type: application/vnd.ms-word");
 header("Content-Disposition:attachment; Filename=ListadoClientes.doc");
